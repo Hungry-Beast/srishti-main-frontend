@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  
+  font-family: font1; /* Name of the font */
+  src: url('/src/assets/Potra.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: font1, sans-serif ;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -350,3 +357,152 @@
   }
   
 }
+
+
+
+#blackhole {
+  height: 100%;
+	background-color: rgba(25,25,25,1);
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+
+.centerHover {
+	width: 255px;
+	height: 255px;
+	background-color: transparent;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -128px;
+	margin-left: -128px;
+	z-index: 2;
+	cursor: pointer;
+	line-height: 255px;
+	text-align: center;
+	transition: all 500ms;
+	
+	&.open  {
+		opacity: 0;
+		pointer-events: none;
+	}
+	
+	&:hover span {
+		color: #DDD;
+		
+		&:before { background-color: #DDD; }
+		&:after { background-color: #DDD; }
+	}
+	
+	span {
+		color: #666;
+		font-family: serif;
+		font-size: 18px;
+		position: relative;
+		transition: all 500ms;
+		
+		&:before {
+			content: '';
+			display: inline-block;
+			height: 1px;
+			width: 16px;
+			margin-right: 12px;
+			margin-bottom: 4px;
+			background-color: #666;
+			transition: all 500ms;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			height: 1px;
+			width: 16px;
+			margin-left: 12px;
+			margin-bottom: 4px;
+			background-color: #666;
+			transition: all 500ms;
+		}
+	}
+}
+canvas {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+
+
+/*Glitch effect*/
+
+
+
+.glitch {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.04em, -0.03em);
+  opacity: 0.75;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+  }
+}
+
+
+
+/*Text Scramble Effect*/
+
+

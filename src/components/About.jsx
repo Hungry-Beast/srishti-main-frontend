@@ -46,22 +46,25 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        {/* <p className={styles.sectionSubText}>ABOUT</p> */}
+        {/* <h2 className={'text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] flex justify-center'}>ABOUT.</h2> */}
+        <p class="glitch 'text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] flex justify-center">
+    About.
+    
+  </p>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='flex justify-center text-justify'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        At NERIST, we ignite a passion for exploration. Shristi is a vibrant stage where students from across the region converge to showcase their ingenuity. From the electrifying whir of Battlebots to the insightful discourse of Model United Nations, a kaleidoscope of events awaits. Hackathons pulsate with the thrill of problem-solving, while Humanoids and pneumatic rockets push the boundaries of robotics. Here, eco-conscious models envision a sustainable future, and innovative ideas blossom under the spotlight.
+Shristi isn't just about competition, it's about connection. It's a platform to learn from industry leaders, ignite minds with captivating SHRTISTI Talks, and hone essential skills like teamwork, communication, and leadership. It's the spark that ignites a sense of community, where students share, collaborate, and refine their talents.
+<br></br><br /> 
+Join us at Shristi and embark on a journey of exploration. Let's transform potential into brilliance, together.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map((service, index) => (
           <ServiceCard 
             key={index}
@@ -70,7 +73,12 @@ const About = () => {
             title={service.title}
             icon={service.icon}
           />
+          
         ))}
+      </div>
+
+      <div>
+      <a href="" class ="btn">SEE MORE</a>
       </div>
     </>
   );

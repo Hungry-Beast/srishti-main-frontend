@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import TextAnimation from "./Background";
+
 
 const Hero = () => {
+  
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -19,7 +22,8 @@ const Hero = () => {
              <span className='text-[#915EFF]'>SHRISTI</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            TITLE <br className='sm:block hidden' />
+         <TextAnimation/>
+           <br className='sm:block hidden' />
             
           </p>
         </div>
