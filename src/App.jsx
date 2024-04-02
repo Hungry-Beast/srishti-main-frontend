@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer } from "./components";
 import { SelectOption } from "./constants";
-
-
+import TeamSection from "./components/Team/Team";
+import SingleEvent from "./components/SingleEvent";
 
 const App = () => {
   return (
@@ -55,12 +55,15 @@ const App = () => {
           <Background />
         </div>} />
 
+        <Route path="/teams" element={<TeamSection />}></Route>
+        <Route path="/event/:id" element={<SingleEvent />}></Route>
+
       </Routes>
       
 
       
     </BrowserRouter>
   );
-}
+};
 
 export default App;
