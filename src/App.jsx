@@ -17,6 +17,7 @@ import {
 } from "./components";
 import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
+import SingleEvent from "./components/SingleEvent";
 
 const App = () => {
   return (
@@ -86,6 +87,7 @@ const App = () => {
         />
 
         <Route path="/teams" element={<TeamSection />}></Route>
+        <Route path="/event/:id" element={<SingleEvent />}></Route>
       </Routes>
     </BrowserRouter>
   );
