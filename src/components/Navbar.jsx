@@ -9,8 +9,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get('abc'));
+  
 
 
   useEffect(() => {
@@ -62,7 +61,7 @@ const Navbar = () => {
               {nav.id === "Login" ? (
                 <Link to="/login">{nav.title}</Link>
               ) : nav.id === "team" ? (
-                <Link to="/team/index.html">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/team">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : nav.id === "events" ? (
                 <Link to="/events">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : (

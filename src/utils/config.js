@@ -1,0 +1,1 @@
+export const prodUrl = "https://shristi-backend.azurewebsites.net"
