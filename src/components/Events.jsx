@@ -4,9 +4,11 @@ import "./style.css";
 
 import "../index.css";
 import { prodUrl } from "../utils/config";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const navigate =useNavigate()
 
   const clubs = [
     {
@@ -100,7 +102,7 @@ const Events = () => {
         ) : (
           <div className="grid grid-cols-4 gap-4">
             {events.map((event, index) => (
-              <div className="work" key={index}>
+              <div className="work" key={index} onClick={()=>navigate(`/event/${event._id}`)}>
                 <img src={event.image} alt={event.name} />
                 <div className="layer">
                   <h3>{event.name}</h3>
