@@ -62,7 +62,7 @@ const Contact = () => {
   return (
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
-        <p className={styles.sectionSubText}>Shristi 2k24</p>
+        <p className={styles.sectionSubText}>SHRISTI | NERIST</p>
         <h3 className={styles.sectionHeadText}>Login.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
@@ -74,21 +74,21 @@ const Contact = () => {
               value={formData.regNo}
               onChange={handleChange}
               placeholder='Enter your registration number'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-poppins'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Password</span>
+            <span className='text-white font-medium mb-4 '>Password</span>
             <input
               type='password'
               name='password'
               value={formData.password}
               onChange={handleChange}
               placeholder='Enter your password'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-poppins'
             />
           </label>
-          <button className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary' type="submit" disabled={loading}>
+          <button className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary ' type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
 

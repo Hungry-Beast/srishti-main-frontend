@@ -13,7 +13,7 @@ import CanvasLoader from "./Loader";
 import Events from "./Events";
 import Footer from "./Footer";
 import Background from "./Background"
-
+import TestElement from './TestElements';
 
 export {
   Hero,
@@ -35,5 +35,5 @@ export {
   Footer,
   Background,
 
-
+  TestElement,
 };

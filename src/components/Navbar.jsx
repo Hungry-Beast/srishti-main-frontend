@@ -9,10 +9,28 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track user login status
+  const [showDropdown, setShowDropdown] = useState(false); // State to control dropdown visibility
+
+
+  const handleImageClick = () => {
+    setShowDropdown(!showDropdown); // Toggle dropdown visibility
+  };
+
+  const handleLogout = () => {
+    // Perform logout operations here
+    // Clear authentication token from local storage
+    localStorage.removeItem("authenticationToken");
+    console.log("logged out");
+    // Redirect to login page
+    window.location.href = "/login";  };
 
 
   useEffect(() => {
+    // Check if authentication token exists in local storage
+    const authToken = localStorage.getItem("authenticationToken");
+    setIsLoggedIn(!!authToken); // Set isLoggedIn to true if authToken exists, otherwise false
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       if (scrollTop > 100) {
@@ -58,20 +76,34 @@ const Navbar = () => {
 
               onClick={() => setActive(nav.title)}
             >
-  
-              {nav.id === "Login" ? (
-                <Link to="/login" className="font-poppins NavBar NavBarLogin ">{nav.title}</Link>
+              {nav.id === "Login" && !isLoggedIn ? (
+                <Link to="/login" className="font-poppins NavBar NavBarLogin">{nav.title}</Link>
               ) : nav.id === "team" ? (
-                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link>
               ) : nav.id === "events" ? (
-                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-              ) : (
-                <a href={`#${nav.id}`} className="font-poppins NavBar">{nav.title}</a>
+                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link>
+              ) : (nav.id !== "Login" || !isLoggedIn) && (
+                nav.title !== "Login" ? (
+                  <Link to={`/${nav.id}`} className="font-poppins NavBar">{nav.title}</Link>
+                ) : null   
               )}
-
             </li>
           ))}
+          <li>{isLoggedIn && (
+          <div className="relative">
+          <img src={'https://cdn.midjourney.com/ae8648b3-cec4-43b6-9124-9695195fc372/grid_0_640_N.webp'} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
+          {showDropdown && (
+            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+              <li><a className="dropdown-item">{localStorage.getItem("userName")}</a></li>
+              <li><a className="dropdown-item"  onClick={handleLogout} >Logout</a></li>
+            </ul>
+          )}
+        </div>
+      )}
+
+        </li>
         </ul>
+        
 
         <div className='sm:hidden flex flex-1 justify-end items-center font-poppins '>
           <img
@@ -96,20 +128,17 @@ const Navbar = () => {
                     setActive(nav.title);
                   }}
                 >
-
-                  {nav.id === "Login" ? (
-                    <Link to="/login" >
-                      <span className=" font-poppins  NavBar NavBarLogin">
-                      {nav.title}
-                      </span>
-                      </Link>
-                  ) : nav.id === "team" ? (
-                    <Link to="/team" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-                  ) : nav.id === "events" ? (
-                    <Link to="/events" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-                  ) : (
-                    <a href={`#${nav.id}`} className="font-poppins  NavBar">{nav.title}</a>
-                  )}
+                 {nav.id === "Login" && !isLoggedIn ? (
+                <Link to="/login" className="font-poppins NavBar NavBarLogin">{nav.title}</Link>
+              ) : nav.id === "team" ? (
+                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link>
+              ) : nav.id === "events" ? (
+                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link>
+              ) : (nav.id !== "Login" || !isLoggedIn) && (
+                nav.title !== "Login" ? (
+                  <Link to={`/${nav.id}`} className="font-poppins NavBar">{nav.title}</Link>
+                ) : null
+              )}
                 </li>
               ))}
             </ul>
