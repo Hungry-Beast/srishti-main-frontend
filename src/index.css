@@ -368,17 +368,8 @@
 	text-align: center;
 	transition: all 500ms;
 	
-	&.open  {
-		opacity: 0;
-		pointer-events: none;
-	}
-	
-	&:hover span {
-		color: #DDD;
-		
-		&:before { background-color: #DDD; }
-		&:after { background-color: #DDD; }
-	}
+
+
 	
 	span {
 		color: #666;

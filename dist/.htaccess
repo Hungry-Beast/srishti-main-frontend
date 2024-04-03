@@ -1,8 +1,8 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-
+  RewriteCond %{HTTP_HOST} ^shristi2k24.com [NC]
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
+  RewriteRule ^(.*)$ http://www.shristi2k24.com/$1 [L,R=301]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
