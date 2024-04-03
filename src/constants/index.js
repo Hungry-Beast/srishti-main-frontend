@@ -24,6 +24,8 @@ import {
   tripguide,
   threejs,
   day1,day2,day3,day4,
+  MUN ,TALK,
+
 } from "../assets";
 
 export const navLinks = [
@@ -51,15 +53,15 @@ export const navLinks = [
 const services = [
   {
     title: "Shristi Talks",
-    icon: web,
+    icon: TALK,
   },
   {
     title: "ROBOSOCCER",
     icon: mobile,
   },
   {
-    title: "MEGAEVENT",
-    icon: backend,
+    title: "MUN",
+    icon: MUN,
   },
   // {
   //   title: "View More",
