@@ -4,6 +4,7 @@
   },
   "routes":[{
     "route":"shristi2k24.com",
-    "redirect":"www.shristi2k24.com"
+    "redirect":"www.shristi2k24.com",
+    "statusCode":301
   }]
 }
