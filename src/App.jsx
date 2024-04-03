@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer } from "./components";
+import { About, Contact, Experience,  Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer } from "./components";
 import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
 import SingleEvent from "./components/SingleEvent";
@@ -53,6 +53,7 @@ const App = () => {
         </div>} />
         <Route path="/test" element={<div className='relative z-0 '>
           <Background />
+
         </div>} />
 
         <Route path="/teams" element={<TeamSection />}></Route>

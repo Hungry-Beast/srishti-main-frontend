@@ -24,7 +24,8 @@ import {
   tripguide,
   threejs,
   day1,day2,day3,day4,
-  MUN ,TALK,
+  MUN ,TALK,ROBOSOCCER,
+
 
 } from "../assets";
 
@@ -57,7 +58,7 @@ const services = [
   },
   {
     title: "ROBOSOCCER",
-    icon: mobile,
+    icon: ROBOSOCCER,
   },
   {
     title: "MUN",
@@ -190,7 +191,7 @@ const experiences = [
     title: "Day 4",
     company_name: "13th April 2024",
     icon: day4,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "Shristi 2024",
     points: [
       "Hackathon Presentation: 10AM-5PM",

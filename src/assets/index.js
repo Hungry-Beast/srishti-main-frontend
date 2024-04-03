@@ -39,6 +39,7 @@ import day4 from "./Days/Day4.png";
 
 import MUN from "./cardPic/MUN.png"
 import TALK from "./cardPic/Talk.png"
+import ROBOSOCCER from "./cardPic/ROBOSOCCER.png"
 
 export {
   logo,
@@ -75,4 +76,5 @@ export {
   day4,
   MUN,
   TALK,
+  ROBOSOCCER,
 };

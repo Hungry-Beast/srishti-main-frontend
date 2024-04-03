@@ -14,6 +14,7 @@ import Events from "./Events";
 import Footer from "./Footer";
 import Background from "./Background"
 
+
 export {
   Hero,
   Navbar,
@@ -33,4 +34,6 @@ export {
   Events,
   Footer,
   Background,
+
+
 };
