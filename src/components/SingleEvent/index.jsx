@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { prodUrl } from "../../utils/config";
+import { localUrl, prodUrl } from "../../utils/config";
 
 const SingleEvent = () => {
   const location = useLocation();
@@ -9,15 +9,19 @@ const SingleEvent = () => {
   const [eventData, setEventData] = useState();
   const getEventData = async () => {
     try {
-      const res = await axios.get(`${localUrl}/events/event/${id}`);
+      const res = await axios.get(`${localUrl}/events/noAuth/${id}?optionalAuth=true`);
       console.log(res);
-    } catch (error) {}
+    } catch (error) {
+        console.log(error)
+    }
   };
   useEffect(() => {
-    getEventData();
+    if (id) getEventData();
+    console.log(eventData)
   }, [id]);
 
-  return <div></div>;
+
+  return <div>dd</div>;
 };
 
 export default SingleEvent;
