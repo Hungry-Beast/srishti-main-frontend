@@ -49,7 +49,7 @@ const App = () => {
           </div>
           <StarsCanvas />
           <Events />
-          <Footer />
+          <Footer isEvents={true} />
         </div>} />
         <Route path="/test" element={<div className='relative z-0 '>
           <Background />
