@@ -5,6 +5,13 @@ import "./style.css";
 import "../index.css";
 import { prodUrl } from "../utils/config";
 import { useNavigate, useNavigation, useSearchParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faYoutube,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import Footer from "./Footer";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -136,50 +143,56 @@ const Events = () => {
   }, []);
 
   return (
-    <div id="portfolio" className="EventsClass">
-      <h3 className="text-4xl font-bold text-center text-event">Events</h3>
-      <div className="flex justify-center items-center">
-        <select
-          className="m-0 select w-max my-10"
-          onChange={(e) => fetchEvents(e.target.value)}
-          value={selectedClub}
-        >
-          {clubs.map((club, index) => {
-            return (
-              <option key={index} value={club.value}>
-                {club.label}
-              </option>
-            );
-          })}
-        </select>
-      </div>
+    <div className="flex flex-col justify-between min-h-screen  ">
+      <div id="portfolio" className="EventsClass mt-10 max-w-7xl mx-auto ">
+        <h3 className="glitch Event  text-xl font-bold text-center text-events">
+          Events
+        </h3>
+        <div className="flex justify-center items-center">
+          <select
+            className="m-0 select w-max my-10 font-poppins font-bold"
+            onChange={(e) => fetchEvents(e.target.value)}
+            value={selectedClub}
+          >
+            {clubs.map((club, index) => {
+              return (
+                <option className="font-poppins" key={index} value={club.value}>
+                  {club.label}
+                </option>
+              );
+            })}
+          </select>
+        </div>
 
-      <div className="container">
-        {loading ? ( // Display loader while loading is true
-          <div className="flex justify-center items-center h-full">
-            <div className="loader">Loading...</div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {events.map((event, index) => (
-              <div
-                className="work"
-                key={index}
-                onClick={() => navigate(`/event/${event._id}`)}
-              >
-                <img src={event.image} alt={event.name} />
-                <div className="layer">
-                  <h3>{event.name}</h3>
-                  <p>{event.description}</p>
-                  <a href={event.registration}>
-                    <i className="fa-solid fa-link"></i>
-                  </a>
+        <div className="container flex-1">
+          
+          {loading ? ( // Display loader while loading is true
+            <div className="flex justify-center items-center ">
+              <div className="loader font-poppins">Loading...</div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 gap-4">
+              {events.map((event, index) => (
+                <div
+                  className="work"
+                  key={index}
+                  onClick={() => navigate(`/event/${event._id}`)}
+                >
+                  <img src={event.image} alt={event.name} />
+                  <div className="layer">
+                    <h3>{event.name}</h3>
+                    <p>{event.description}</p>
+                    <a href={event.registration}>
+                      <i className="fa-solid fa-link"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
+      <Footer  />
     </div>
   );
 };

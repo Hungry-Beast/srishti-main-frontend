@@ -44,7 +44,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 font-poppins object-contain' />
           <p className='text-white text-[18px] font-poppins font-bold cursor-pointer flex '>
-            Shristi 2k24 &nbsp;
+            SHRISTI 2k24&nbsp;
             <span className='sm:block hidden font-poppins '> | NERIST</span>
           </p>
         </Link>

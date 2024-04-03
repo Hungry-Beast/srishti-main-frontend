@@ -35,21 +35,21 @@ const Footer = (props) => {
         <div className="flex justify-center mb-4">
           <ul className="flex space-x-4">
             <li>
-              <a href="/events" className="text-xs">EVENTS</a>
+              <a href="/events" className="text-xs font-poppins">EVENTS</a>
             </li>
             <li>
-              <a href="/#work" className="text-xs">ROADMAP</a>
+              <a href="/#work" className="text-xs font-poppins">ROADMAP</a>
             </li>
             <li>
-              <a href="/team" className="text-xs">SHRISTI TEAM</a>
+              <a href="/team" className="text-xs font-poppins">SHRISTI TEAM</a>
             </li>
             <li>
-              <a href="mailto:contact@shristi2k24.com" className="text-xs">CONTACT</a>
+              <a href="mailto:contact@shristi2k24.com" className="text-xs font-poppins">CONTACT</a>
             </li>
           </ul>
         </div>
         <div className="flex justify-center">
-          <div className="text-[9px]">
+          <div className="text-[9px] font-poppins">
             &copy; {new Date().getFullYear()} Shristi 2k24. All Rights Reserved.
           </div>
         </div>
