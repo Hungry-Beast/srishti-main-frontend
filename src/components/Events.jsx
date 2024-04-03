@@ -4,11 +4,12 @@ import "./style.css";
 
 import "../index.css";
 import { prodUrl } from "../utils/config";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate, useNavigation, useSearchParams } from "react-router-dom";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
   const navigate =useNavigate()
+  const [searchParams, setSearchParams]=useSearchParams()
 
   const clubs = [
     {
@@ -57,10 +58,10 @@ const Events = () => {
     },
   ].map((club) => ({ label: club.name, value: club._id }));
 
-  const [selectedClub, setSetedClub] = useState(clubs[0].value);
   const [loading, setLoading] = useState(true);
 
   const fetchEvents = async (selectedClub) => {
+    setSearchParams({ deptId: selectedClub });
     try {
       const response = await axios.get(
         prodUrl + `/events/noAuth/${selectedClub}`
@@ -74,6 +75,7 @@ const Events = () => {
   };
 
   // Call fetchEvents directly when the component mounts
+  const selectedClub=searchParams.get('deptId')
   useEffect(() => {
     if (selectedClub) fetchEvents(selectedClub);
   }, []);
@@ -82,8 +84,9 @@ const Events = () => {
     <div id="portfolio" className="EventsClass">
       <h3 className="text-4xl font-bold text-center text-event">Events</h3>
       <select
-        className="select select_body .bg-gray-400"
+        className="select  "
         onChange={(e) => fetchEvents(e.target.value)}
+        value={selectedClub}
       >
         {clubs.map((club, index) => {
           return (
