@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 @font-face {
-  
   font-family: font1; /* Name of the font */
   src: url('/src/assets/Potra.ttf') format('truetype');
 }
@@ -15,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: font1, sans-serif ;
+  font-family: font1, sans-serif  ;
   scroll-behavior: smooth;
   color-scheme: dark;
 }

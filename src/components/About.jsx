@@ -56,12 +56,13 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='flex justify-center text-justify'
+        className='flex justify-center text-center font-poppins'
       >
-        At NERIST, we ignite a passion for exploration. Shristi is a vibrant stage where students from across the region converge to showcase their ingenuity. From the electrifying whir of Battlebots to the insightful discourse of Model United Nations, a kaleidoscope of events awaits. Hackathons pulsate with the thrill of problem-solving, while Humanoids and pneumatic rockets push the boundaries of robotics. Here, eco-conscious models envision a sustainable future, and innovative ideas blossom under the spotlight.
+        <b className="font-poppins">
+        At NERIST, we ignite a passion for exploration. Shristi is a vibrant stage where students from across the region converge to showcase their ingenuity. From the electrifying whir of Battlebots to the insightful discourse of Model United Nations, a kaleidoscope of events awaits. Hackathons pulsate with the thrill of problem-solving, while Humanoids and pneumatic rockets push the boundaries of robotics. Here, eco-conscious models envision a sustainable future, and innovative ideas blossom under the spotlight.<br />
 Shristi isn't just about competition, it's about connection. It's a platform to learn from industry leaders, ignite minds with captivating SHRTISTI Talks, and hone essential skills like teamwork, communication, and leadership. It's the spark that ignites a sense of community, where students share, collaborate, and refine their talents.
 <br></br><br /> 
-Join us at Shristi and embark on a journey of exploration. Let's transform potential into brilliance, together.
+Join us at Shristi and embark on a journey of exploration. Let's transform potential into brilliance, together.</b>
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10 justify-center'>
@@ -78,7 +79,7 @@ Join us at Shristi and embark on a journey of exploration. Let's transform poten
       </div>
 
       <div>
-      <a href="" class ="btn">SEE MORE</a>
+      <a href="/events" class ="btn font-poppins">SEE MORE</a>
       </div>
     </>
   );

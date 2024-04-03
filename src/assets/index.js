@@ -30,6 +30,12 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+
+import day1 from "./Days/Day1.png";
+import day2 from "./Days/Day2.png";
+import day3 from "./Days/Day3.png";
+import day4 from "./Days/Day4.png";
+
 export {
   logo,
   backend,
@@ -59,4 +65,8 @@ export {
   carrent,
   jobit,
   tripguide,
+  day1,
+  day2,
+  day3,
+  day4,
 };
