@@ -60,13 +60,13 @@ const Navbar = () => {
             >
   
               {nav.id === "Login" ? (
-                <Link to="/login" className="font-poppins">{nav.title}</Link>
+                <Link to="/login" className="font-poppins NavBar NavBarLogin ">{nav.title}</Link>
               ) : nav.id === "team" ? (
-                <Link to="/team">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : nav.id === "events" ? (
-                <Link to="/events" className="font-poppins">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : (
-                <a href={`#${nav.id}`} className="font-poppins">{nav.title}</a>
+                <a href={`#${nav.id}`} className="font-poppins NavBar">{nav.title}</a>
               )}
 
             </li>
@@ -99,16 +99,16 @@ const Navbar = () => {
 
                   {nav.id === "Login" ? (
                     <Link to="/login" >
-                      <span className=" font-poppins">
+                      <span className=" font-poppins  NavBar NavBarLogin">
                       {nav.title}
                       </span>
                       </Link>
                   ) : nav.id === "team" ? (
-                    <Link to="/team/index.html" className="font-poppins">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/team" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : nav.id === "events" ? (
-                    <Link to="/events" className="font-poppins">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/events" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : (
-                    <a href={`#${nav.id}`} className="font-poppins">{nav.title}</a>
+                    <a href={`#${nav.id}`} className="font-poppins  NavBar">{nav.title}</a>
                   )}
                 </li>
               ))}
