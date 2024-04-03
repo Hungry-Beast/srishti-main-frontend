@@ -81,29 +81,29 @@ const RegisterUser = () => {
 
         <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-bold mb-4 font-poppins">Your Name</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-white font-bold mb-4 font-poppins">Your Email</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Enter your email address"
-              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
             />
           </label>
           <label className="flex items-center justify-between">
-            <span className="text-white font-medium  w-max">
+            <span className="text-white font-bold  w-max font-poppins">
               Are you a Neristian?
             </span>
             <Switch
@@ -125,7 +125,7 @@ const RegisterUser = () => {
           </label>
           {form.isNeristian && (
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4">
+              <span className="text-white font-bold mb-4 font-poppins">
                 Registration Number
               </span>
               <input
@@ -134,30 +134,30 @@ const RegisterUser = () => {
                 value={form.regNo}
                 onChange={handleChange}
                 placeholder="Enter your registration number"
-                className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
               />
             </label>
           )}
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Password</span>
+            <span className="text-white font-bold mb-4 font-poppins">Password</span>
             <input
               type="password"
               name="password"
               value={form.password}
               onChange={handleChange}
               placeholder="Enter your password"
-              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold "
+            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold font-poppins "
           >
             Register User
           </button>
           <Link to="/login">
-            <span className="text-white underline decoration-solid">
+            <span className="text-white underline decoration-solid font-poppins">
               Already a user?Login here!
             </span>
           </Link>

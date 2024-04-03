@@ -4,9 +4,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import {
-  Link
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Contact = () => {
   const formRef = useRef();
@@ -68,28 +66,28 @@ const Contact = () => {
 
         <form ref={formRef} onSubmit={handleSubmit} className=' mt-6 flex flex-col gap-4  '>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Registration Number</span>
+            <span className='text-white font-bold mb-4 font-poppins '>Registration Number</span>
             <input
               type='text'
               name='regNo'
               value={formData.regNo}
               onChange={handleChange}
               placeholder='Enter your registration number'
-              className='backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70  py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium '
+              className='backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70  py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins '
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Password</span>
+            <span className='text-white mb-4 font-bold font-poppins'>Password</span>
             <input
               type='password'
               name='password'
               value={formData.password}
               onChange={handleChange}
               placeholder='Enter your password'
-              className='backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins '
             />
           </label>
-            <button className='bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold' type="submit" disabled={loading}>
+            <button className='bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold font-poppins' type="submit" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </button>
 
@@ -97,7 +95,7 @@ const Contact = () => {
               <span 
                 id="newUserRegistration"
                 type='submit'
-                className='text-white underline decoration-solid'
+                className='text-white underline decoration-solid font-poppins'
               >
                 Don't have an account? Register here
               </span>

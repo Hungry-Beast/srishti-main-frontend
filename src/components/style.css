@@ -13,6 +13,27 @@ html{
         width: 50%;
         padding: 10px;
 }
+
+
+.NavBar{
+    font-weight: 700;
+}
+/* .NavBarLogin{
+    color: transparent;
+    background-color: transparent;
+    background: transparent;
+	font-size: 40px;
+	-webkit-text-stroke: 1px #804dee;
+	text-shadow: -1px 1px 2px #804dee,
+				  1px 1px 2px #804dee,
+				  1px -1px 0 #804dee,
+				  -1px -1px 0 #804dee;
+}
+
+.NavBarLogin:hover{
+    -webkit-text-fill-color: #804dee;
+
+} */
 #ClubName{
     font-size: large;
 }
@@ -102,7 +123,7 @@ html{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #dd004f;
+    border: 1px solid #804dee;
     padding: 14px 50px; 
     border-radius: 6px;
     text-decoration: none;
@@ -111,7 +132,7 @@ html{
 }
 
 .btn:hover{
-    background: #ff004f;
+    background: #804dee;
 }
 
 
@@ -130,3 +151,6 @@ html{
       }      
       
   }
+
+
+

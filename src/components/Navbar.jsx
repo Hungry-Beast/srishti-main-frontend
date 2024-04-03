@@ -9,8 +9,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get('abc'));
+  
 
 
   useEffect(() => {
@@ -31,49 +30,50 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX
-        } w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent"
+        } w-full flex items-center py-5 fixed top-0 z-20 font-poppins  ${scrolled ? "bg-primary" : "bg-transparent"
         }`}
     >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <div className='w-full flex justify-between font-poppins items-center max-w-7xl mx-auto'>
         <Link
           to='/'
-          className='flex items-center gap-2'
+          className='flex items-center font-poppins  gap-2'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+          <img src={logo} alt='logo' className='w-9 h-9 font-poppins object-contain' />
+          <p className='text-white text-[18px] font-poppins font-bold cursor-pointer flex '>
             Shristi 2k24 &nbsp;
-            <span className='sm:block hidden'> | NERIST</span>
+            <span className='sm:block hidden font-poppins '> | NERIST</span>
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-10 font-poppins  '>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
+                } hover:text-white text-[18px] font-medium cursor-pointer font-poppins  `}
+
               onClick={() => setActive(nav.title)}
             >
-
+  
               {nav.id === "Login" ? (
-                <Link to="/login">{nav.title}</Link>
+                <Link to="/login" className="font-poppins NavBar NavBarLogin ">{nav.title}</Link>
               ) : nav.id === "team" ? (
-                <Link to="/team/index.html">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : nav.id === "events" ? (
-                <Link to="/events">{nav.title}</Link> // Modify the href accordingly for the team link
+                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
               ) : (
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a href={`#${nav.id}`} className="font-poppins NavBar">{nav.title}</a>
               )}
 
             </li>
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden flex flex-1 justify-end items-center font-poppins '>
           <img
             src={toggle ? close : menu}
             alt='menu'
@@ -98,13 +98,17 @@ const Navbar = () => {
                 >
 
                   {nav.id === "Login" ? (
-                    <Link to="/login">{nav.title}</Link>
+                    <Link to="/login" >
+                      <span className=" font-poppins  NavBar NavBarLogin">
+                      {nav.title}
+                      </span>
+                      </Link>
                   ) : nav.id === "team" ? (
-                    <Link to="/team/index.html">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/team" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : nav.id === "events" ? (
-                    <Link to="/events">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/events" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : (
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a href={`#${nav.id}`} className="font-poppins  NavBar">{nav.title}</a>
                   )}
                 </li>
               ))}
