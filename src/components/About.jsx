@@ -1,6 +1,8 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom'; // Assuming you're using React Router
+
 
 import { styles } from "../styles";
 import { services } from "../constants";
@@ -79,7 +81,10 @@ Join us at Shristi and embark on a journey of exploration. Let's transform poten
       </div>
 
       <div>
-      <a href="/events" class ="btn font-poppins">SEE MORE</a>
+        <Link to="/events">
+        <a class ="btn font-poppins">SEE MORE</a>
+        </Link>
+     
       </div>
     </>
   );
