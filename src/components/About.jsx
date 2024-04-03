@@ -3,22 +3,20 @@ import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom'; // Assuming you're using React Router
 
-
-import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const handleRedirect = () => {
-  // Redirect logic here
-  window.location.href = '/events/index.html'; // Replace '/redirect-page' with your desired URL
-};
 
-const ServiceCard = ({ index, title, icon, className }) => (
-  <Tilt className='xs:w-[250px] w-full'>
+
+const ServiceCard = ({ index, title, icon, className }) =>{
+  
+  return (
+  <Tilt className='xs:w-[250px] w-full relative'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className={'w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card '}
+      className={'w-full green-pink-gradient p-[1px] rounded-[20px]   '}
+      
     >
       <div
         options={{
@@ -26,15 +24,17 @@ const ServiceCard = ({ index, title, icon, className }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className=' rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
         onClick={index === 3 ? handleRedirect : null} // Attach onClick event handler conditionally
         style={{ cursor: 'pointer' }} 
+        
       >
         <img
           src={icon}
           alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
+          className='w-full h-full object-contain absolute   rounded-[18px]'
+          height='10px' // Specify the height here
+                  />
 
         <h3 className='text-white text-[20px] font-bold text-center'>
           {title}
@@ -42,7 +42,7 @@ const ServiceCard = ({ index, title, icon, className }) => (
       </div>
     </motion.div>
   </Tilt>
-);
+)};
 
 const About = () => {
   return (

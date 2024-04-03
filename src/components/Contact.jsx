@@ -62,12 +62,12 @@ const Contact = () => {
   return (
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
-        <p className={styles.sectionSubText}>Shrist 2k24</p>
+        <p className={styles.sectionSubText}>Shristi 2k24</p>
         <h3 className={styles.sectionHeadText}>Login.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Registration Number</span>
+            <span className='text-white font-medium mb-4 '>Registration Number</span>
             <input
               type='text'
               name='regNo'
