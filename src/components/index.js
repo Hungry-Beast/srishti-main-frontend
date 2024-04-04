@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import Background from "./Background"
 import TestElement from './TestElements';
 import ForgetPassword from './ForgetPassword';
+import LoaderComponent from './LoaderComponent';
 
 export {
   Hero,
@@ -37,4 +38,5 @@ export {
   Background,
   ForgetPassword,
   TestElement,
+  LoaderComponent,
 };
