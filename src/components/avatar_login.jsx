@@ -13,7 +13,7 @@ const avatar_login = () => {
     <div>
       <Dropdown>
         <DropdownTrigger>
-          <Button variant="bordered"><Avatar showFallback name='Jane' src='https://images.unsplash.com/broken' /></Button>
+          <Button variant="bordered"><Avatar showFallback name='J'/></Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">
           <DropdownItem key="new">New file</DropdownItem>
