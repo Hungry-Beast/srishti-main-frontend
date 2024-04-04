@@ -23,6 +23,10 @@ import {
   jobit,
   tripguide,
   threejs,
+  day1, day2, day3, day4,
+  MUN, TALK, ROBOSOCCER,
+
+
 } from "../assets";
 
 export const navLinks = [
@@ -54,15 +58,15 @@ export const navLinks = [
 const services = [
   {
     title: "Shristi Talks",
-    icon: web,
+    icon: TALK,
   },
   {
     title: "ROBOSOCCER",
-    icon: mobile,
+    icon: ROBOSOCCER,
   },
   {
-    title: "MEGAEVENT",
-    icon: backend,
+    title: "MUN",
+    icon: MUN,
   },
   // {
   //   title: "View More",
@@ -128,10 +132,10 @@ const technologies = [
 const experiences = [
   {
     title: "Day 1",
-    company_name: "Shristi 2k24",
-    icon: starbucks,
+    company_name: "10th April 2024",
+    icon: day1,
     iconBg: "#383E56",
-    date: "10th April 2024",
+    date: "Shristi 2024",
     points: [
       "Inauguration",
       "GIS: 2PM-3:30PM",
@@ -148,10 +152,10 @@ const experiences = [
   },
   {
     title: "Day 2",
-    company_name: "Shristi 2k24",
-    icon: tesla,
+    company_name: "11th April 2024",
+    icon: day2,
     iconBg: "#E6DEDD",
-    date: "11th April 2024",
+    date: "Shristi 2024",
     points: [
       "CAD Craftmanship: 9AM-11AM",
       "Eco-Craft Clique: 11AM-1PM",
@@ -164,10 +168,10 @@ const experiences = [
   },
   {
     title: "Day 3",
-    company_name: "Shristi 2k24",
-    icon: shopify,
+    company_name: "12th April 2024",
+    icon: day3,
     iconBg: "#383E56",
-    date: "12th April 2024",
+    date: "Shristi 2024",
     points: [
       "Know Your Earth: 9AM-12PM",
       "Waste to Best: 3PM-5PM",
@@ -189,10 +193,10 @@ const experiences = [
   },
   {
     title: "Day 4",
-    company_name: "Shristi 2k24",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "12th April 2024",
+    company_name: "13th April 2024",
+    icon: day4,
+    iconBg: "#E6DEDD",
+    date: "Shristi 2024",
     points: [
       "Hackathon Presentation: 10AM-5PM",
       "Civic Vision: 9AM-1PM",

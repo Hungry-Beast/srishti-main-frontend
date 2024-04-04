@@ -14,6 +14,7 @@ import Events from "./Events";
 import Footer from "./Footer";
 import Background from "./Background"
 
+
 export {
   Hero,
   Navbar,
@@ -24,13 +25,15 @@ export {
   Feedbacks,
   Contact,
   CanvasLoader,
-  EarthCanvas, 
-  BallCanvas, 
-  ComputersCanvas, 
+  EarthCanvas,
+  BallCanvas,
+  ComputersCanvas,
   StarsCanvas,
   Navbar2,
   Contact2,
   Events,
   Footer,
   Background,
+
+
 };

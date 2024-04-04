@@ -4,7 +4,7 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
+   Feedbacks,
   Hero,
   Navbar,
   Background,
@@ -38,7 +38,7 @@ const App = () => {
               {/* <Works /> */}
               <Feedbacks />
               <Footer />
-              {/* <StarsCanvas /> */}
+              {/* {/* <StarsCanvas /> */} */
             </div>
           }
         />
@@ -88,7 +88,8 @@ const App = () => {
           element={
             <div className="relative z-0 ">
               <Background />
-            </div>
+    
+        </div>
           }
         />
 
