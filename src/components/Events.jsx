@@ -62,22 +62,6 @@ const Events = () => {
   //     __v: 0,
   //   },
   // ].map((club) => ({ label: club.name, value: club._id }));
-
-  useEffect(() => {
-    functionWrapper
-      .get(prodUrl + "/clubs")
-      .then((res) => {
-        console.log(res);
-
-        setClubs(res);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  // useEffect(() => {}, [clubs]);
-
-  const [loading, setLoading] = useState(true);
-
   const fetchEvents = async (selectedClub) => {
     setSearchParams({ deptId: selectedClub });
     try {
@@ -107,6 +91,25 @@ const Events = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    functionWrapper
+      .get(prodUrl + "/clubs")
+      .then(async(res) => {
+        console.log(res);
+
+        setClubs(res);
+        if(res?.length){
+          fetchEvents(res?.[0]?._id)
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  // useEffect(() => {}, [clubs]);
+
+  const [loading, setLoading] = useState(true);
+
+  
 
   // Call fetchEvents directly when the component mounts
   const selectedClub = searchParams.get("deptId");
@@ -120,7 +123,8 @@ const Events = () => {
       <select
         className="select  "
         onChange={(e) => fetchEvents(e.target.value)}
-        value={selectedClub}>
+        value={selectedClub}
+      >
         {clubs.map((club, index) => {
           return (
             <option key={index} value={club["_id"]}>
@@ -144,7 +148,8 @@ const Events = () => {
                   <div
                     className="work"
                     key={index}
-                    onClick={() => navigate(`/event/${event["id"]}`)}>
+                    onClick={() => navigate(`/event/${event["id"]}`)}
+                  >
                     <img src={event.image} alt={event.name} loading="lazy" />
                     <div className="layer">
                       <h3>{event.name}</h3>
@@ -168,7 +173,8 @@ const Events = () => {
                   <div
                     className="work"
                     key={index}
-                    onClick={() => navigate(`/event/${event.id}`)}>
+                    onClick={() => navigate(`/event/${event.id}`)}
+                  >
                     <img src={event.image} alt={event.name} loading="lazy" />
                     <div className="layer">
                       <h3>{event.name}</h3>
