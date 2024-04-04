@@ -11,7 +11,6 @@ import {
   faYoutube,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import Footer from "./Footer";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -192,7 +191,6 @@ const Events = () => {
           )}
         </div>
       </div>
-      {/* <Footer  /> */}
     </div>
   );
 };
