@@ -1,7 +1,7 @@
 const myHeaders = new Headers();
 const user = JSON.parse(localStorage.getItem('user'))
 console.log(user)
-myHeaders.append("Authorization", "Bearer " + user.authToken);
+myHeaders.append("Authorization", "Bearer " + user?.authToken);
 
 
 
