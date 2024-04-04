@@ -7,6 +7,7 @@ import { slideIn } from "../utils/motion";
 import {
   Link
 } from 'react-router-dom';
+import { prodUrl } from "../utils/config";
 
 const Contact = () => {
   const formRef = useRef();
@@ -17,6 +18,7 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,20 +34,17 @@ const Contact = () => {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow"
+        redirect: "follow",
       };
 
-      const response = await fetch("https://shristi-backend.azurewebsites.net/auth/login", requestOptions);
+      const response = await fetch(`${prodUrl}/auth/login`, requestOptions);
       const data = await response.json();
 
       if (response.ok) {
         // Login successful
         console.log("Login successful:", data);
-        localStorage.setItem("authToken", response);
-        localStorage.setItem("registrationNumber", formData.regNo);
-       
-
-
+        localStorage.setItem("user", JSON.stringify(data));
+        // localStorage.setItem("registrationNumber", formData.regNo);
       } else {
         // Login failed
         console.error("Login failed:", data.error);

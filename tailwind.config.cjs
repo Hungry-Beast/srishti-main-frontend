@@ -27,9 +27,9 @@ module.exports = {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },
       fontFamily: {
-        poppins: "Poppins, sans-serif",
-        potra: "font1, sans-serif",
-      },
+        "poppins": 'Poppins, sans-serif',
+        "potra": "font1, sans-serif"
+      }
     },
   },
   darkMode: "class",
