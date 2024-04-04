@@ -53,21 +53,17 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer font-poppins  `}
+              className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}
 
               onClick={() => setActive(nav.title)}
             >
   
-              {nav.id === "Login" ? (
-                <Link to="/login" className="font-poppins NavBar NavBarLogin ">{nav.title}</Link>
-              ) : nav.id === "team" ? (
-                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-              ) : nav.id === "events" ? (
-                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-              ) : (
-                <a href={`#${nav.id}`} className="font-poppins NavBar">{nav.title}</a>
-              )}
+              <Link to={`${nav.href}`} className={` `}> 
+              <div className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}>
+
+              {nav.title}
+              </div>
+              </Link>
 
             </li>
           ))}

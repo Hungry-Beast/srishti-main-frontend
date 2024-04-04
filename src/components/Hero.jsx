@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="absolute w-screen h-screen top-0 left-0 flex items-center justify-center">
-          <div className="m-auto  max-w-[700px]  ">
+          <div className="m-auto  w-[300vw] overflow-hidden  ">
             <Lottie animationData={animationData} className="" />
           </div>
           {/* <div>

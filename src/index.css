@@ -479,3 +479,9 @@ canvas {
 /*Text Scramble Effect*/
 
 
+
+.highligh{
+  --webkit-text-stroke-width: 3px;
+  --webkit-text-stroke-color: #ab43d7;
+  font-weight: 800;
+}
