@@ -192,7 +192,7 @@ const Events = () => {
           )}
         </div>
       </div>
-      <Footer  />
+      {/* <Footer  /> */}
     </div>
   );
 };
