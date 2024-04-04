@@ -6,6 +6,7 @@ import "../index.css";
 import { prodUrl } from "../utils/config";
 import { useNavigate, useNavigation, useSearchParams } from "react-router-dom";
 import { functionWrapper } from "../utils/wrapper";
+import { Select, SelectItem } from "@nextui-org/select";
 
 const Events = () => {
   const [events, setEvents] = useState({
@@ -66,7 +67,7 @@ const Events = () => {
     setSearchParams({ deptId: selectedClub });
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-      console.log(user);
+      console.log(selectedClub);
       if (user) {
         functionWrapper
           .get(prodUrl + "/events/" + selectedClub)
@@ -94,12 +95,12 @@ const Events = () => {
   useEffect(() => {
     functionWrapper
       .get(prodUrl + "/clubs")
-      .then(async(res) => {
+      .then(async (res) => {
         console.log(res);
 
-        setClubs(res);
-        if(res?.length){
-          fetchEvents(res?.[0]?._id)
+        setClubs([...res]);
+        if (res?.length) {
+          fetchEvents(res?.[0]?._id);
         }
       })
       .catch((err) => console.log(err));
@@ -109,8 +110,6 @@ const Events = () => {
 
   const [loading, setLoading] = useState(true);
 
-  
-
   // Call fetchEvents directly when the component mounts
   const selectedClub = searchParams.get("deptId");
   useEffect(() => {
@@ -118,21 +117,44 @@ const Events = () => {
   }, []);
 
   return (
-    <div id="portfolio" className="EventsClass">
-      <h3 className="text-4xl font-bold text-center text-event">Events</h3>
-      <select
-        className="select  "
-        onChange={(e) => fetchEvents(e.target.value)}
-        value={selectedClub}
-      >
-        {clubs.map((club, index) => {
-          return (
-            <option key={index} value={club["_id"]}>
-              {club.name}
-            </option>
-          );
-        })}
-      </select>
+    <div id="portfolio" className="EventsClass max-w-7xl mx-auto h-full">
+      <h3 className="glitch Event  text-xl font-bold text-center text-events">
+        Events
+      </h3>
+      <div className="flex justify-center items-center">
+        <Select
+          label="Select a department"
+          // className="font-poppins font-bold"
+          classNames={{
+            label: "font-poppins font-bold",
+            trigger: "w-[400px] mt-10",
+            popoverContent: "font-poppins font-bold",
+            base: "font-poppins",
+            innerWrapper: "font-poppins",
+            value: "font-poppins",
+            mainWrapper: "flex justiy-center items-center",
+          }}
+          onChange={(e) => fetchEvents(e.target.value)}
+          value={selectedClub}
+          defaultSelectedKeys={["cat"]}
+        >
+          {clubs.map((club, index) => {
+            return (
+              <SelectItem
+                classNames={{
+                  base: "font-poppins",
+                  title: "font-poppins",
+                }}
+                className="font-poppins"
+                key={club._id}
+                value={club._id}
+              >
+                {club.name}
+              </SelectItem>
+            );
+          })}
+        </Select>
+      </div>
 
       <div className="container">
         {loading ? ( // Display loader while loading is true
@@ -155,20 +177,20 @@ const Events = () => {
                       <h3>{event.name}</h3>
                       <p>{event.description}</p>
                       <a href={event.registration}>
-                        <i className="fa-solid fa-link"></i>
+                        <i style={{curser :"pointer"}} className="fa-solid fa-link"></i>
                       </a>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center">Nothing to show!</div>
+              <div className="text-center">Nothing to show</div>
             )}
             <div className="mt-10">
               <h3 className="mb-5 text-2xl font-bold text-event">
                 Main Events
               </h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
                 {events.mainEvents?.map((event, index) => (
                   <div
                     className="work"
