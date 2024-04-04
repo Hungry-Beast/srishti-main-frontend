@@ -52,7 +52,7 @@ const App = () => {
           <Events />
           <Footer />
         </div>} />
-        <Route path="/passreset" element={<div className='relative z-0 '>
+        <Route path="/forgetpassword" element={<div className='relative z-0 '>
           <Navbar />
           <ForgetPassword />
           
