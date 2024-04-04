@@ -3,7 +3,13 @@ import { Link, useSearchParams } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close , Avatar} from "../assets";
+import { logo, menu, close , Avatar,Avatar2,Avatar3,Avatar4,Avatar5,Avatar6} from "../assets";
+const images = [Avatar,Avatar2,Avatar3,Avatar4,Avatar5,Avatar6];
+const getRandomImage = () => {
+  const randomIndex = Math.floor(Math.random() * images.length);
+  return images[randomIndex];
+};
+const randomImage = getRandomImage();
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -46,6 +52,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <nav
       className={`${styles.paddingX
@@ -66,6 +73,7 @@ const Navbar = () => {
             SHRISTI &nbsp;
             <span className='sm:block hidden font-poppins '> | NERIST</span>
           </p>
+
         </Link>
 
         <ul className='list-none hidden sm:flex flex-row gap-10 font-poppins  '>
@@ -92,7 +100,7 @@ const Navbar = () => {
           ))}
           <li>{isLoggedIn && (
           <div className="relative">
-          <img src={Avatar} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
+          <img src={randomImage} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
           {showDropdown && (
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
               <li><a className="dropdown-item"  onClick={handleLogout} >Logout</a></li>

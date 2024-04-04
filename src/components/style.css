@@ -18,22 +18,19 @@ html{
 .NavBar{
     font-weight: 700;
 }
-/* .NavBarLogin{
-    color: transparent;
-    background-color: transparent;
-    background: transparent;
-	font-size: 40px;
-	-webkit-text-stroke: 1px #804dee;
-	text-shadow: -1px 1px 2px #804dee,
-				  1px 1px 2px #804dee,
-				  1px -1px 0 #804dee,
-				  -1px -1px 0 #804dee;
+.NavBarLogin{
+  font-weight: 900;
+  font-weight: bold; /* Adjust font weight as needed */
+  color: transparent; /* Transparent text color */
+  -webkit-text-stroke: 1px #804dee; /* Adjust the color and stroke width as needed */
+  text-stroke: 1px #804dee; /* Adjust the color and stroke width as needed */
+
 }
 
 .NavBarLogin:hover{
-    -webkit-text-fill-color: #804dee;
+    -webkit-text-fill-color: #ab43d7;
 
-} */
+}
 #ClubName{
     font-size: large;
 }

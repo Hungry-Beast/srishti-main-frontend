@@ -42,6 +42,13 @@ import TALK from "./cardPic/Shristi.png"
 import ROBOSOCCER from "./cardPic/ROBOSOCCER.png"
 
 import Avatar from "./avatar/avatar.webp"
+import Avatar2 from "./avatar/a.webp"
+import Avatar3 from "./avatar/b.webp"
+import Avatar4 from "./avatar/c.webp"
+import Avatar5 from "./avatar/d.webp"
+import Avatar6 from "./avatar/e.jpeg"
+
+
 
 export {
   logo,
@@ -80,4 +87,9 @@ export {
   TALK,
   ROBOSOCCER,
   Avatar,
+  Avatar2,
+  Avatar3,
+  Avatar4,
+  Avatar5,
+  Avatar6,
 };
