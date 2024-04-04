@@ -19,6 +19,7 @@
     "@react-three/fiber": "^8.11.1",
     "axios": "^1.6.8",
     "caniuse-lite": "^1.0.30001600",
+    "clsx": "^2.1.0",
     "framer-motion": "^9.1.7",
     "jquery": "^3.7.1",
     "lottie-react": "^2.4.0",
@@ -31,6 +32,7 @@
     "react-tilt": "^0.1.4",
     "react-vertical-timeline-component": "^3.6.0",
     "reactjs-popup": "^2.0.6",
+    "tailwind-merge": "^2.2.2",
     "three": "^0.149.0"
   },
   "devDependencies": {
