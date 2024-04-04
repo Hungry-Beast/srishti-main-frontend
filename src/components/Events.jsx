@@ -11,6 +11,7 @@ import {
   faYoutube,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import {Select, SelectItem} from "@nextui-org/react";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -122,6 +123,7 @@ const Events = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchEvents = async (selectedClub) => {
+    console.log(selectedClub)
     setSearchParams({ deptId: selectedClub });
     try {
       const response = await axios.get(
@@ -148,19 +150,32 @@ const Events = () => {
           Events
         </h3>
         <div className="flex justify-center items-center">
-          <select
-            className="m-0 select w-max my-10 font-poppins font-bold"
+          <Select
+            label="Select a department"
+            // className="font-poppins font-bold"
+            classNames={{
+              label: "font-poppins font-bold",
+              trigger: "w-[400px] mt-10",
+              popoverContent: "font-poppins font-bold",
+              base:"font-poppins",
+              innerWrapper:"font-poppins",
+              value:"font-poppins"
+            }}
+          
             onChange={(e) => fetchEvents(e.target.value)}
             value={selectedClub}
           >
             {clubs.map((club, index) => {
               return (
-                <option className="font-poppins" key={index} value={club.value}>
+                <SelectItem  classNames={{
+                  base:"font-poppins",
+                  title:"font-poppins",
+                }} className="font-poppins" key={club.value} value={club.value}>
                   {club.label}
-                </option>
+                </SelectItem>
               );
             })}
-          </select>
+          </Select>
         </div>
 
         <div className="container flex-1">
