@@ -17,7 +17,6 @@ const Footer = () => {
             <li><a href="/#work">RoadMap</a></li>
             <li><a href="/team">Shristi Team</a></li>
             <li><a href="mailto:contact@shristi2k24.com">Contact</a></li>
-
           </ul>
         </div>
 
