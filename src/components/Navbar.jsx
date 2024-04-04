@@ -21,6 +21,7 @@ const Navbar = () => {
     // Perform logout operations here
     // Clear authentication token from local storage
     localStorage.removeItem("authenticationToken");
+    localStorage.removeItem("userName");
     console.log("logged out");
     // Redirect to login page
     window.location.href = "/login";  };

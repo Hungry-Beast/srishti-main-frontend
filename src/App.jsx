@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience,  Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer, TestElement} from "./components";
+import { About, Contact, Experience,  Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer, TestElement,ForgetPassword} from "./components";
 import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
 import SingleEvent from "./components/SingleEvent";
+
 
 const App = () => {
   return (
@@ -51,12 +52,12 @@ const App = () => {
           <Events />
           <Footer />
         </div>} />
-        <Route path="/test" element={<div className='relative z-0 '>
+        <Route path="/passreset" element={<div className='relative z-0 '>
           <Navbar />
-          <Background />
-          <TestElement />
-
+          <ForgetPassword />
+          
         </div>} />
+
 
         <Route path="/teams" element={<TeamSection />}></Route>
         <Route path="/event/:id" element={<SingleEvent />}></Route>

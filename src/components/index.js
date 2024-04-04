@@ -14,6 +14,7 @@ import Events from "./Events";
 import Footer from "./Footer";
 import Background from "./Background"
 import TestElement from './TestElements';
+import ForgetPassword from './ForgetPassword';
 
 export {
   Hero,
@@ -34,6 +35,6 @@ export {
   Events,
   Footer,
   Background,
-
+  ForgetPassword,
   TestElement,
 };
