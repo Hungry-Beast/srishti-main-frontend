@@ -6,6 +6,7 @@ import "../index.css";
 import { prodUrl } from "../utils/config";
 import { useNavigate, useNavigation, useSearchParams } from "react-router-dom";
 import { functionWrapper } from "../utils/wrapper";
+import { Select, SelectItem } from "@nextui-org/select";
 
 const Events = () => {
   const [events, setEvents] = useState({
@@ -66,7 +67,7 @@ const Events = () => {
     setSearchParams({ deptId: selectedClub });
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-      console.log(user);
+      console.log(selectedClub);
       if (user) {
         functionWrapper
           .get(prodUrl + "/events/" + selectedClub)
@@ -97,7 +98,7 @@ const Events = () => {
       .then(async(res) => {
         console.log(res);
 
-        setClubs(res);
+        setClubs([...res]);
         if(res?.length){
           fetchEvents(res?.[0]?._id)
         }
@@ -143,8 +144,8 @@ const Events = () => {
                 <SelectItem  classNames={{
                   base:"font-poppins",
                   title:"font-poppins",
-                }} className="font-poppins" key={club.value} value={club.value}>
-                  {club.label}
+                }} className="font-poppins" key={club._id} value={club._id}>
+                  {club.name}
                 </SelectItem>
               );
             })}
