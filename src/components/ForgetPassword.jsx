@@ -52,7 +52,7 @@ const ForgetPassword = () => {
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
         <p className={styles.sectionSubText}>SHRISTI | NERIST</p>
-        <h3 className={styles.sectionHeadText}>Forgot Password?</h3>
+        <h3 className={'text-white font-black md:text-[50px] sm:text-[50px] xs:text-[40px] text-[30px]' }>Forgot Password?</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>

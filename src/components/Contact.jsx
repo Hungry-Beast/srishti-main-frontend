@@ -78,7 +78,7 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4 '>Password</span>
+            <span className='text-white font-medium mb-4 '>Password <eye/></span>
             <input
               type='password'
               name='password'

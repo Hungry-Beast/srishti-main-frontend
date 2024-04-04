@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo, menu, close , Avatar} from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -24,7 +24,7 @@ const Navbar = () => {
     localStorage.removeItem("userName");
     console.log("logged out");
     // Redirect to login page
-    window.location.href = "/login";  };
+    window.location.href = "/";  };
 
 
   useEffect(() => {
@@ -92,10 +92,9 @@ const Navbar = () => {
           ))}
           <li>{isLoggedIn && (
           <div className="relative">
-          <img src={'https://cdn.midjourney.com/ae8648b3-cec4-43b6-9124-9695195fc372/grid_0_640_N.webp'} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
+          <img src={Avatar} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
           {showDropdown && (
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-              <li><a className="dropdown-item">{localStorage.getItem("userName")}</a></li>
               <li><a className="dropdown-item"  onClick={handleLogout} >Logout</a></li>
             </ul>
           )}
@@ -103,6 +102,7 @@ const Navbar = () => {
       )}
 
         </li>
+        <li><a className="dropdown-item">{localStorage.getItem("userName")}</a></li>
         </ul>
         
 

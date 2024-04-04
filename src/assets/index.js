@@ -38,8 +38,10 @@ import day4 from "./Days/Day4.png";
 
 
 import MUN from "./cardPic/MUN.png"
-import TALK from "./cardPic/Talk.png"
+import TALK from "./cardPic/Shristi.png"
 import ROBOSOCCER from "./cardPic/ROBOSOCCER.png"
+
+import Avatar from "./avatar/avatar.webp"
 
 export {
   logo,
@@ -77,4 +79,5 @@ export {
   MUN,
   TALK,
   ROBOSOCCER,
+  Avatar,
 };

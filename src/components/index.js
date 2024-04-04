@@ -16,6 +16,7 @@ import Background from "./Background"
 import TestElement from './TestElements';
 import ForgetPassword from './ForgetPassword';
 import LoaderComponent from './LoaderComponent';
+import eye from './icon/image.png';
 
 export {
   Hero,
@@ -39,4 +40,5 @@ export {
   ForgetPassword,
   TestElement,
   LoaderComponent,
+  eye
 };

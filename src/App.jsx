@@ -13,7 +13,7 @@ const App = () => {
     // Simulate content loading delay
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3300);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -37,7 +37,7 @@ const App = () => {
                 {/* <Works /> */}
                 <Feedbacks />
                 <Footer />
-                <StarsCanvas />
+
               </div>
             )
           }
@@ -52,7 +52,7 @@ const App = () => {
               <div className='relative z-0'>
                 <Contact />
                 <Footer />
-                <StarsCanvas />
+
               </div>
             </div>
           )
@@ -67,7 +67,7 @@ const App = () => {
               <div className='relative z-0'>
                 <Contact2 />
                 <Footer />
-                <StarsCanvas />
+
               </div>
             </div>
           )
@@ -99,7 +99,28 @@ const App = () => {
           )
         } />
 
-        <Route path="/teams" element={<TeamSection />}></Route>
+        <Route path="/team" element={
+          loading ? (
+            <LoaderComponent />
+          ) : (
+            <div className='relative z-0 '>
+              <Navbar />
+              <div className='mt-6'>
+              <TeamSection />
+              </div>
+            </div>
+          )
+        } />
+        <Route path="/test" element={
+          
+            <div className='relative z-0 '>
+              <Navbar />
+              <div className='mt-6'>
+             <TestElement />
+              </div>
+            </div>
+          
+        } />
         <Route path="/event/:id" element={<SingleEvent />}></Route>
 
       </Routes>
