@@ -76,12 +76,13 @@ export const slideIn = (direction, type, delay, duration) => {
 };
 
 export const staggerContainer = (staggerChildren, delayChildren) => {
+  console.log(staggerChildren)
   return {
     hidden: {},
     show: {
       transition: {
         staggerChildren: staggerChildren,
-        delayChildren: delayChildren || 0,
+        delayChildren: 0,
       },
     },
   };
