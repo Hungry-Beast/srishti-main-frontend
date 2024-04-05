@@ -38,11 +38,11 @@ const Hero = () => {
   }, []); // Empty dependency array to run effect only once
   return (
     <section
-      className={`relative w-full lg:h-screen mx-auto mt-[12em] grid  sm:flex items-center justify-center lg:justify-center lg:items-center  `}
+      className={`relative w-full min-h-[65vh] sm:min-h-[100vh] md:w-3/4 sm:h-screen mx-auto mt-[8em] md:mt-0 grid  sm:flex items-center justify-center lg:justify-center lg:items-center  `}
     >
       {/* <ComputersCanvas /> */}
 
-      <div className="font-potra mt-12 md:mt-0  relative justify-self-start flex flex-col md:items-center md:justify-center z-10  max-w-7xl mx-auto  ">
+      <div className="font-potra mt-12 sm:mt-0 lg:mt-0 relative justify-self-start flex flex-col md:items-center md:justify-center z-10  max-w-7xl mx-auto">
         <h1
           className=" text-sm  tracking-[3.2px] absolute top-0 xs:text-sm xs:tracking-[7px] sm:text-sm sm:tracking-[10.8px] md:text-base md:tracking-[15.6px] lg:absolute lg:tracking-[26.1px]  lg:top-[12px]     xl:top-[25px] xl:tracking-[30.8px] left-0  w-max "
           style={{}}
@@ -76,10 +76,10 @@ const Hero = () => {
       </div>
 
 
-      <div className=" mix-blend-normal  ">
+      <div className=" mix-blend-normal ">
         <img
-          src="/hero_full_crop.png"
-          className="w-full   absolute left-0 top-0 mix-blend-color-burn -z-10 opacity-0.3 image"
+          src="/phone_bgt.png"
+          className="w-full absolute left-0 top-0 mix-blend-color-burn -z-10 opacity-0.3 image"
           style={
             {
               // top: value > 0 ? `-${value * 4}%` : 0,
