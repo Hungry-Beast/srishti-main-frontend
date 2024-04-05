@@ -20,6 +20,7 @@ import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
 import SingleEvent from "./components/SingleEvent";
 import Stars from "./components/BackgroundStar/Stars";
+import LostInSpaceAnimation from "./components/404";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -119,7 +120,7 @@ const App = () => {
 
           <Route path="/teams" element={<TeamSection />}></Route>
           <Route path="/event/:id" element={<SingleEvent />}></Route>
-        </Routes>
+        </Routes> 
       </BrowserRouter>
       <Stars />
     </div>
@@ -127,3 +128,4 @@ const App = () => {
 };
 
 export default App;
+
