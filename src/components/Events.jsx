@@ -11,6 +11,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { functionWrapper } from "../utils/wrapper";
+import { Select, SelectItem } from "@nextui-org/select";
 
 const Events = () => {
   const [events, setEvents] = useState({
@@ -68,17 +69,6 @@ const Events = () => {
   //     __v: 0,
   //   },
   // ].map((club) => ({ label: club.name, value: club._id }));
-
-  useEffect(() => {
-    functionWrapper
-      .get(prodUrl + "/clubs")
-      .then((res) => {
-        console.log(res);
-
-        setClubs(res);
-      })
-      .catch((err) => console.log(err));
-  }, []);
 
   // useEffect(() => {}, [clubs]);
 
@@ -158,21 +148,57 @@ const Events = () => {
     if (selectedClub) fetchEvents(selectedClub);
   }, []);
 
+  useEffect(() => {
+    functionWrapper
+      .get(prodUrl + "/clubs")
+      .then((res) => {
+        console.log(res);
+
+        setClubs([...res.flat()]);
+        if (!selectedClub && res?.length) {
+          fetchEvents(res[0]["_id"]);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
-    <div id="portfolio" className="EventsClass">
-      <h3 className="text-4xl font-bold text-center text-event">Events</h3>
-      <select
-        className="select  "
-        onChange={(e) => fetchEvents(e.target.value)}
-        value={selectedClub}>
-        {clubs.map((club, index) => {
-          return (
-            <option key={index} value={club["_id"]}>
-              {club.name}
-            </option>
-          );
-        })}
-      </select>
+    <div id="portfolio" className="EventsClass max-w-7xl mx-auto h-full">
+      <h3 className="glitch Event  text-xl font-bold text-center text-events">
+        Events
+      </h3>
+      <div className="flex justify-center items-center">
+        <Select
+          label="Select a department"
+          // className="font-poppins font-bold"
+          classNames={{
+            label: "font-poppins font-bold",
+            trigger: "w-[400px] mt-10",
+            popoverContent: "font-poppins font-bold",
+            base: "font-poppins",
+            innerWrapper: "font-poppins",
+            value: "font-poppins",
+            mainWrapper: "flex justiy-center items-center",
+          }}
+          onChange={(e) => fetchEvents(e.target.value)}
+          value={selectedClub}
+          defaultSelectedKeys={["cat"]}>
+          {clubs.map((club, index) => {
+            return (
+              <SelectItem
+                classNames={{
+                  base: "font-poppins",
+                  title: "font-poppins",
+                }}
+                className="font-poppins"
+                key={club._id}
+                value={club._id}>
+                {club.name}
+              </SelectItem>
+            );
+          })}
+        </Select>
+      </div>
 
       <div className="container">
         {loading ? ( // Display loader while loading is true
