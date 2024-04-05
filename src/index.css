@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
 
 @tailwind base;
 @tailwind components;
@@ -7,14 +7,14 @@
 
 @font-face {
   font-family: font1; /* Name of the font */
-  src: url('/src/assets/Potra.ttf') format('truetype');
+  src: url("/src/assets/YearOne-1Gv6j.otf") format("truetype");
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: font1, sans-serif  ;
+  font-family: font1, sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -209,108 +209,104 @@
   }
 }
 
-
 /* FOOTER */
 
-.footer{
-  background:#000;
-  padding:30px 0px;
-  font-family: 'Play', sans-serif;
-  text-align:center;
-  }
-  
-  .footer .row{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:gray;
-  font-size:0.8em;
-  }
-  
-  .footer .row a{
-  text-decoration:none;
-  color:gray;
-  transition:0.5s;
-  }
-  
-  .footer .row a:hover{
-  color:#fff;
-  }
-  
-  .footer .row ul{
-  width:100%;
-  }
-  
-  .footer .row ul li{
-  display:inline-block;
-  margin:0px 30px;
-  }
-  
-  .footer .row a i{
-  font-size:2em;
-  margin:0% 1%;
-  }
-  
-  @media (max-width: 720px) {
-    .footer {
-      text-align: center; /* Center align the footer content */
-      padding: 5%;
-    }
-    .footer .row ul li {
-      display: block;
-      margin: 10px 0px;
-      text-align: left; /* Left align the list items */
-    }
-    .footer .row a i {
-      margin: 0% 3%;
-    }
-  }
-  /* select tag*/
+.footer {
+  background: #000;
+  padding: 30px 0px;
+  font-family: "Play", sans-serif;
+  text-align: center;
+}
 
-  :root {
-    --arrow-bg: rgba(255, 255, 255, 0.3);
-    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
-    --option-bg: rgba(255, 255, 255, 0.816);
-    --select-bg: rgba(255, 255, 255, 0.2);
-  }
- 
-  .select-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Adjust margin as needed */
-  }
- 
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
 
-  /* <select> styles */
-  select {
-    margin-left: 40%;
-    display: grid;
-    place-items: center;
-    margin-top: 20px;
-    /*Adjust margin as needed */
-    /* Reset */
-    appearance: none;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    /* Personalize */
-    width: 20rem;
-    padding: 1rem 4rem 1rem 1rem;
-    /* background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
-      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em); */
-    color: white;
-    border-radius: 0.25em;
-    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    /* Remove IE arrow */
-    
-    /* Remove focus outline */
-   
-  }
-  
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
 
 @media (max-width: 720px) {
-  .text-event{
+  .footer {
+    text-align: center; /* Center align the footer content */
+    padding: 5%;
+  }
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left; /* Left align the list items */
+  }
+  .footer .row a i {
+    margin: 0% 3%;
+  }
+}
+/* select tag*/
+
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: rgba(255, 255, 255, 0.816);
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+/* <select> styles */
+select {
+  margin-left: 40%;
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  /*Adjust margin as needed */
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  /* background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em); */
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+
+  /* Remove focus outline */
+}
+
+@media (max-width: 720px) {
+  .text-event {
     margin-top: 20%;
   }
   select {
@@ -332,86 +328,74 @@
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     /* Remove IE arrow */
-    
+
     /* Remove focus outline */
-    
-    
   }
-  
 }
-
-
 
 #blackhole {
   height: 100%;
-	background-color: rgba(25,25,25,1);
-	height: 100%;
-	width: 100%;
-	position: relative;
-	display: flex;
+  background-color: rgba(25, 25, 25, 1);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
 .centerHover {
-	width: 255px;
-	height: 255px;
-	background-color: transparent;
-	border-radius: 50%;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-top: -128px;
-	margin-left: -128px;
-	z-index: 2;
-	cursor: pointer;
-	line-height: 255px;
-	text-align: center;
-	transition: all 500ms;
-	
+  width: 255px;
+  height: 255px;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -128px;
+  margin-left: -128px;
+  z-index: 2;
+  cursor: pointer;
+  line-height: 255px;
+  text-align: center;
+  transition: all 500ms;
 
+  span {
+    color: #666;
+    font-family: serif;
+    font-size: 18px;
+    position: relative;
+    transition: all 500ms;
 
-	
-	span {
-		color: #666;
-		font-family: serif;
-		font-size: 18px;
-		position: relative;
-		transition: all 500ms;
-		
-		&:before {
-			content: '';
-			display: inline-block;
-			height: 1px;
-			width: 16px;
-			margin-right: 12px;
-			margin-bottom: 4px;
-			background-color: #666;
-			transition: all 500ms;
-		}
-		&:after {
-			content: '';
-			display: inline-block;
-			height: 1px;
-			width: 16px;
-			margin-left: 12px;
-			margin-bottom: 4px;
-			background-color: #666;
-			transition: all 500ms;
-		}
-	}
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 16px;
+      margin-right: 12px;
+      margin-bottom: 4px;
+      background-color: #666;
+      transition: all 500ms;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 16px;
+      margin-left: 12px;
+      margin-bottom: 4px;
+      background-color: #666;
+      transition: all 500ms;
+    }
+  }
 }
 canvas {
-	position: relative;
-	z-index: 1;
-	width: 100%;
-	height: 100%;
-	margin: auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
-
-
 /*Glitch effect*/
-
-
 
 .glitch {
   font-size: 5rem;
@@ -484,14 +468,61 @@ canvas {
   }
 }
 
-
-
 /*Text Scramble Effect*/
 
-
-
-.highligh{
+.highligh {
   --webkit-text-stroke-width: 3px;
   --webkit-text-stroke-color: #ab43d7;
   font-weight: 800;
 }
+
+@keyframes hideImage {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.gradual-hide {
+  animation: hideImage 5s linear forwards;
+}
+
+.clipped-image {
+  position: relative;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.clipped-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  filter: blur(10px); /* Set the blur radius */
+  z-index: 1;
+}
+
+.clipped-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  position: relative;
+  z-index: 2;
+}
+
+ 

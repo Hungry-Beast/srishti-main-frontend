@@ -57,4 +57,7 @@
     }
   } */
 
-  
+.image {
+  --webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(red, transparent);
+}
