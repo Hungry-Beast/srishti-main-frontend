@@ -70,10 +70,13 @@
     rgba(0 0 0 /1),
     rgba(0 0 0 /0.8) 30%,
     rgba(0 0 0 /0.7) 40%,
-    rgba(0 0 0 /0.1) 48%,
-    rgba(0 0 0 /0) 50%,
+    rgba(0 0 0 /0.6) 48%,
+    rgba(0 0 0 /0.6) 50%,
+    rgba(0 0 0 /0.5) 65%,
+    rgba(0 0 0 /0.0) 75%,
     rgba(0 0 0 /0)
   );
+  mix-blend-mode: darken;
 
   /* clip-path: circle(100% at 50% 50%);
   -webkit-clip-path: circle(100% at 50% 50%); */
