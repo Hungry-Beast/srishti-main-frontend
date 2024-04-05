@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { styles } from "../styles"; // Assuming you have styles imported correctly
 import { EarthCanvas } from "./canvas";
@@ -21,6 +21,7 @@ const RegisterUser = () => {
   });
   const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +60,9 @@ const RegisterUser = () => {
         console.log(result); // Log the response from the server
         setLoading(false); // Reset loading state after successful request
         // Add any additional logic here, such as redirecting the user after successful registration
+
+        localStorage.setItem("user", result);
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
