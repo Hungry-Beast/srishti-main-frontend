@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer, TestElement, ForgetPassword, LoaderComponent } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Background, Works, StarsCanvas, Contact2, Navbar2, Events, Footer, TestElement, ForgetPassword, LoaderComponent, NotFoundPage} from "./components";
 import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
 import SingleEvent from "./components/SingleEvent";
@@ -117,11 +117,18 @@ const App = () => {
               <Navbar />
               <div className='mt-6'>
              <TestElement />
+             <NotFoundPage />
               </div>
             </div>
           
         } />
         <Route path="/event/:id" element={<SingleEvent />}></Route>
+        <Route path='*' element={ <div className='relative z-0 '>
+              <Navbar />
+              <div className='mt-6'>
+             <NotFoundPage />
+              </div>
+            </div>} />
 
       </Routes>
     </BrowserRouter>

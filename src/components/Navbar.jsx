@@ -98,21 +98,22 @@ const Navbar = () => {
               )}
             </li>
           ))}
-          <li>{isLoggedIn && (
+          <li>
+
+        </li>
+        
+        </ul>
+        {isLoggedIn && (
           <div className="relative">
           <img src={randomImage} alt="User" className="w-9 h-9 rounded-full cursor-pointer"  style={{ cursor: "pointer !important" }} onClick={handleImageClick} />
           {showDropdown && (
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+              <li><a className="dropdown-item">{localStorage.getItem("userName")}</a></li>
               <li><a className="dropdown-item"  onClick={handleLogout} >Logout</a></li>
             </ul>
           )}
         </div>
       )}
-
-        </li>
-        <li><a className="dropdown-item">{localStorage.getItem("userName")}</a></li>
-        </ul>
-        
 
         <div className='sm:hidden flex flex-1 justify-end items-center font-poppins '>
           <img

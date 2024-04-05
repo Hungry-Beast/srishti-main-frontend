@@ -48,8 +48,7 @@ import Avatar4 from "./avatar/c.webp"
 import Avatar5 from "./avatar/d.webp"
 import Avatar6 from "./avatar/e.jpeg"
 
-
-
+import Error404 from "./404.json"
 export {
   logo,
   backend,
@@ -92,4 +91,6 @@ export {
   Avatar4,
   Avatar5,
   Avatar6,
+  Error404,
+  
 };

@@ -16,6 +16,7 @@ import Background from "./Background"
 import TestElement from './TestElements';
 import ForgetPassword from './ForgetPassword';
 import LoaderComponent from './LoaderComponent';
+import NotFoundPage from './NotFoundPage';
 
 
 export {
@@ -40,4 +41,5 @@ export {
   ForgetPassword,
   TestElement,
   LoaderComponent,
+  NotFoundPage,
 };
