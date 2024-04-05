@@ -523,6 +523,7 @@ canvas {
   object-fit: cover; /* Ensure the image covers the container */
   position: relative;
   z-index: 2;
+  
 }
 
  

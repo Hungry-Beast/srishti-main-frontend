@@ -58,6 +58,26 @@
   } */
 
 .image {
-  --webkit-mask-image: linear-gradient(black, transparent);
-  mask-image: linear-gradient(red, transparent);
+  --webkit-mask-image: linear-gradient(
+    rgba(0 0 0 /0.6),
+    rgba(0 0 0 /0.4) 30%,
+    rgba(0 0 0 /0.3) 50%,
+    rgba(0 0 0 /0) 60%,
+    rgba(0 0 0 /0)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0 0 0 /1),
+    rgba(0 0 0 /0.8) 30%,
+    rgba(0 0 0 /0.7) 40%,
+    rgba(0 0 0 /0.1) 48%,
+    rgba(0 0 0 /0) 50%,
+    rgba(0 0 0 /0)
+  );
+
+  /* clip-path: circle(100% at 50% 50%);
+  -webkit-clip-path: circle(100% at 50% 50%); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+   */
+  clip-path: path("M0 0 L0 70% Q50 100, 100 70% L100 0 Z");
 }

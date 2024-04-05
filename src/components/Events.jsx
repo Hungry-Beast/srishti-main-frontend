@@ -195,7 +195,7 @@ const Events = () => {
                   <div
                     className="work"
                     key={index}
-                    onClick={() => navigate(`/event/${event.id}`)}
+                    onClick={() => navigate(`/event/${event._id}`)}
                   >
                     <img src={event.image} alt={event.name} loading="lazy" />
                     <div className="layer">
