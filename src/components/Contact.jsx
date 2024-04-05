@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const formRef = useRef();
-  const [formData, setFormData] = useState({ regNo: "", password: "" });
+  const [formData, setFormData] = useState({ phoneNo: "", password: "" });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -43,7 +43,6 @@ const Contact = () => {
         // Login successful
         console.log("Login successful:", data);
         localStorage.setItem("user", JSON.stringify(data));
-        // localStorage.setItem("registrationNumber", formData.regNo);
       } else {
         // Login failed
         console.error("Login failed:", data.error);
@@ -79,8 +78,8 @@ const Contact = () => {
             </span>
             <input
               type="text"
-              name="regNo"
-              value={formData.regNo}
+              name="phoneNo"
+              value={formData.phoneNo}
               onChange={handleChange}
               placeholder="Enter your registration number"
               className="backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70  py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
