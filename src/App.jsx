@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import React, { useState, useEffect } from "react";
 import {
   About,
   Contact,
@@ -9,6 +9,7 @@ import {
   Navbar,
   Background,
   Works,
+  LoaderComponent,
   StarsCanvas,
   Contact2,
   Navbar2,
@@ -21,7 +22,20 @@ import SingleEvent from "./components/SingleEvent";
 import Stars from "./components/BackgroundStar/Stars";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LostInSpaceAnimation from "./components/404";
+
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate content loading delay
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 3300);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div>
       <BrowserRouter>
@@ -29,20 +43,21 @@ const App = () => {
           <Route
             index
             element={
-              <div className="relative z-0 ">
-                <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                  <Navbar />
-                  <Hero />
+              loading ? (
+                <LoaderComponent />
+              ) : (
+                <div className="relative z-0 ">
+                  <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+                    <Navbar />
+                    <Hero />
+                  </div>
+                  <About />
+                  <Experience />
+                  {/* <Works /> */}
+                  <Feedbacks />
+                  <Footer />
                 </div>
-                <About />
-
-                <Experience />
-
-                {/* <Works /> */}
-                <Feedbacks />
-                <Footer />
-                {/* <StarsCanvas /> */}
-              </div>
+              )
             }
           />
 
@@ -50,7 +65,7 @@ const App = () => {
             path="/login"
             element={
               <div className="relative z-0 ">
-                <Navbar2 />
+                <Navbar />
                 <div className="relative z-0">
                   <Contact />
                   <Footer />
@@ -105,6 +120,7 @@ const App = () => {
           <Route path="/test" element={<div className="relative z-0 "></div>} />
 
           <Route path="/teams" element={<TeamSection />}></Route>
+
           <Route path="/events/:id" element={<SingleEvent />}></Route>
         </Routes>
         <ToastContainer />
