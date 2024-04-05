@@ -21,6 +21,7 @@ const RegisterUser = () => {
   });
   const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

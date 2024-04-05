@@ -25,7 +25,11 @@ const SingleEvent = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user);
 
-    if (!user) navigate("/login");
+    if (!user) {
+      navigate("/login");
+
+      return;
+    }
     setLoading(true);
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -84,11 +88,11 @@ const SingleEvent = () => {
       setEventData(res.data);
     } catch (error) {
       console.log(error);
-      toast
-        .error("Failed to fetch event data. Please try again later.", {
-          position: "bottom-center",
-        })
-        .finally(() => setLoading(false));
+      toast.error("Failed to fetch event data. Please try again later.", {
+        position: "bottom-center",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -145,7 +149,7 @@ const SingleEvent = () => {
                   className=" btn-register font-potra px-[90px] sm:px-[100px] sm:ml-3 text-[21px]"
                   type="submit"
                   onClick={() => handleRegister(event)}>
-                  Register
+                  REGISTER
                 </button>
               )}
             </div>

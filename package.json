@@ -22,6 +22,7 @@
     "clsx": "^2.1.0",
     "framer-motion": "^9.1.7",
     "jquery": "^3.7.1",
+    "lottie": "^0.0.1",
     "lottie-react": "^2.4.0",
     "maath": "^0.5.2",
     "react": "^18.2.0",

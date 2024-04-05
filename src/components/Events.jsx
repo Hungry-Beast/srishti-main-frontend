@@ -14,6 +14,7 @@ import { functionWrapper } from "../utils/wrapper";
 import { Select, SelectItem } from "@nextui-org/select";
 import { staticClubs } from "../utils/constants";
 import ALoader from "../utils/ALoader";
+import { toast } from "react-toastify";
 
 const Events = () => {
   const [events, setEvents] = useState({
@@ -64,7 +65,10 @@ const Events = () => {
   const handleRegister = (data) => {
     const user = JSON.parse(localStorage.getItem("user"));
     console.log(user);
-    if (!user) navigate("/login");
+    if (!user) {
+      window.location.href = "/login";
+      return;
+    }
     setLoading(true);
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -82,17 +86,40 @@ const Events = () => {
     formdata.append("eventId", data.id);
     formdata.append("eventName", data.name);
 
-    console.log(formdata);
     functionWrapper
       .post(`${prodUrl}/registration`, formdata)
       .then((res) => {
         console.log(res);
+        if (res.ok) {
+          toast.success("Successfully registered.", {
+            position: "bottom-center",
+          });
+          navigate("/events");
+        } else throw res.statusText;
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err);
+
+        toast.error("Failed to register", {
+          position: "bottom-center",
+        });
+      })
       .finally(() => {
         setLoading(false);
+
         fetchEvents(selectedClub);
       });
+
+    // functionWrapper
+    //   .post(`${prodUrl}/registration`, formdata)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err))
+    //   .finally(() => {
+    //     setLoading(false);
+
+    //   });
   };
 
   // Call fetchEvents directly when the component mounts
@@ -152,7 +179,7 @@ const Events = () => {
           <>
             <div className="mt-10">
               <h3 className="mb-5 text-2xl font-bold text-event">
-                Main Events
+                Main Events of {events?.mainEvents[0]?.clubName}
               </h3>
 
               <div className={`grid grid-cols-4 gap-6 gap-y-14`}>
@@ -167,12 +194,16 @@ const Events = () => {
                       <a href={event.registration}>
                         <i className="fa-solid fa-link"></i>
                       </a> */}
-                      <div className="flex absolute bottom-9 justify-around w-full px-3  flex-wrap">
+                      <div className="flex absolute bottom-9 justify-around w-full px-3 gap-2  flex-wrap">
                         <button
                           className="border-[#804dee] py-3 px-6 rounded-xl outline-none w-fit text-black bg-slate-100 font-bold font-poppins uppercase "
                           type="submit"
                           disabled={loading}
-                          onClick={() => navigate(`/events/${event.id}`)}>
+                          onClick={() =>
+                            navigate(
+                              `/events/${event.id ? event.id : event["_id"]}`
+                            )
+                          }>
                           View More
                         </button>
                         {event.isRegistered ? (
@@ -184,12 +215,14 @@ const Events = () => {
                             </button>
                           </div>
                         ) : (
-                          <button
-                            className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2   border-[#804dee] bg-black bg-opacity-60 uppercase"
-                            type="submit"
-                            onClick={() => handleRegister(event)}>
-                            Register
-                          </button>
+                          <div>
+                            <button
+                              className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2   border-[#804dee] bg-black bg-opacity-60 uppercase"
+                              type="submit"
+                              onClick={() => handleRegister(event)}>
+                              Register
+                            </button>
+                          </div>
                         )}
                       </div>
                     </div>
