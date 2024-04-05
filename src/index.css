@@ -397,16 +397,6 @@ canvas {
 
 /*Glitch effect*/
 
-.glitch {
-  font-size: 5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: relative;
-  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
-    0.025em 0.04em 0 #0000;
-  animation: glitch 725ms infinite;
-}
-
 .Event {
   font-size: 36px !important;
   font-weight: bold;
@@ -523,7 +513,25 @@ canvas {
   object-fit: cover; /* Ensure the image covers the container */
   position: relative;
   z-index: 2;
-  
 }
 
- 
+.glitch {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #0000;
+  animation: glitch 725ms infinite;
+}
+
+@media only screen and (min-width: 450px) {
+  .glitch {
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 650px) {
+  .glitch {
+    font-size: 5rem;
+  }
+}
