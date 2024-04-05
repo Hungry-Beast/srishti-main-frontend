@@ -6,7 +6,7 @@ import TextAnimation from "./Background";
 import "./Hero.css";
 import Lottie from "lottie-react";
 import animationData from "../assets/Earth.json";
-import Halo from "vanta/dist/vanta.halo.min";
+// import Halo from "vanta/dist/vanta.halo.min";
 import { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
@@ -45,8 +45,7 @@ const Hero = () => {
       <div className="font-potra mt-12 sm:mt-0 lg:mt-0 relative justify-self-start flex flex-col md:items-center md:justify-center z-10  max-w-7xl mx-auto">
         <h1
           className=" text-sm  tracking-[3.2px] absolute top-0 xs:text-sm xs:tracking-[7px] sm:text-sm sm:tracking-[10.8px] md:text-base md:tracking-[15.6px] lg:absolute lg:tracking-[26.1px]  lg:top-[12px]     xl:top-[25px] xl:tracking-[30.8px] left-0  w-max "
-          style={{}}
-        >
+          style={{}}>
           Techno management fest
         </h1>
         <div className="flex">
@@ -67,8 +66,7 @@ const Hero = () => {
         </div>
         <h1
           className=" leading-6  w-full  grid grid-cols-3 items-center text-sm  tracking-[5px] absolute -bottom-2 xs:text-sm xs:tracking-[7px] sm:text-sm sm:tracking-[10.8px] md:text-base md:tracking-[15.6px] lg:absolute lg:tracking-[20px] md:bottom-0 lg:bottom-2  xl:tracking-[30.8px] left-0   "
-          style={{}}
-        >
+          style={{}}>
           <div className="h-0.5 bg-white  "></div>
           2K24
           <div className="h-0.5 bg-white  "></div>

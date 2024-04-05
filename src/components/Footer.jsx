@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faYoutube,
-  faTwitter,
+  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons"; // Importing Instagram icon from free-brands-svg-icons
 
 const Footer = (props) => {
@@ -25,9 +25,9 @@ const Footer = (props) => {
                 <FontAwesomeIcon icon={faYoutube} className="object-cover h-6 w-6" />
               </i>
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/school/north-eastern-regional-institute-of-science-and-technology-nerist-/">
               <i>
-                <FontAwesomeIcon icon={faTwitter} className="object-cover h-6 w-6" />
+              <FontAwesomeIcon icon={faLinkedinIn}  className="object-cover h-6 w-6" />
               </i>
             </a>
           </div>
@@ -35,22 +35,22 @@ const Footer = (props) => {
         <div className="flex justify-center mb-4">
           <ul className="flex space-x-4">
             <li>
-              <a href="/events" className="text-xs font-poppins">EVENTS</a>
+              <a href="/events" className="text-xs font-potra">EVENTS</a>
             </li>
             <li>
-              <a href="/#work" className="text-xs font-poppins">ROADMAP</a>
+              <a href="/#work" className="text-xs font-potra">ROADMAP</a>
             </li>
             <li>
-              <a href="/team" className="text-xs font-poppins">SHRISTI TEAM</a>
+              <a href="/team" className="text-xs font-potra">SHRISTI TEAM</a>
             </li>
             <li>
-              <a href="mailto:contact@shristi2k24.com" className="text-xs font-poppins">CONTACT</a>
+              <a href="mailto:contact@email.shristi2k24.com" className="text-xs font-potra">CONTACT</a>
             </li>
           </ul>
         </div>
         <div className="flex justify-center">
-          <div className="text-[9px] font-poppins">
-            &copy; {new Date().getFullYear()} Shristi 2k24. All Rights Reserved.
+          <div className="text-[13px] font-poppins">
+            &copy; Shristi 2k24. All Rights Reserved.
           </div>
         </div>
       </div>

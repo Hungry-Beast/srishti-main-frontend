@@ -6,6 +6,9 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { Link } from "react-router-dom";
 import { prodUrl } from "../utils/config";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -16,27 +19,26 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
-
+  
       const raw = JSON.stringify(formData);
-
+  
       const requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
         redirect: "follow",
       };
-
+  
       const response = await fetch(`${prodUrl}/auth/login`, requestOptions);
       const data = await response.json();
-
+  
       if (response.ok) {
         // Login successful
         console.log("Login successful:", data);
@@ -45,15 +47,18 @@ const Contact = () => {
       } else {
         // Login failed
         console.error("Login failed:", data.error);
-        alert(data.error);
+        toast.error(data.error,{
+          position: "bottom-center"
+        }); // Display error message using toastify
       }
     } catch (error) {
       console.error("Error during login:", error);
-      alert("An error occurred during login. Please try again later.");
+      toast.error("An error occurred during login. Please try again later."); // Display generic error message using toastify
     } finally {
       setLoading(false);
     }
   };
+ 
 
   return (
     <div
