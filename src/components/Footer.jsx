@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="footer" >
         <div className="row">
-          <a href="#"><i><FontAwesomeIcon icon={faInstagram} /></i></a>
+          <a href="https://www.instagram.com/shristi_2k24/"><i><FontAwesomeIcon icon={faInstagram} /></i></a>
           <a href="#"> <i><FontAwesomeIcon icon={faYoutube} /></i></a>
           <a href="#">  <i><FontAwesomeIcon icon={faTwitter} /></i></a>
         </div>
@@ -17,7 +17,6 @@ const Footer = () => {
             <li><a href="/#work">RoadMap</a></li>
             <li><a href="/team">Shristi Team</a></li>
             <li><a href="mailto:contact@shristi2k24.com">Contact</a></li>
-
           </ul>
         </div>
 

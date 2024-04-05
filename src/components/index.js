@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Events from "./Events";
 import Footer from "./Footer";
+import Background from "./Background"
 
 export {
   Hero,
@@ -30,5 +31,6 @@ export {
   Navbar2,
   Contact2,
   Events,
-  Footer
+  Footer,
+  Background,
 };

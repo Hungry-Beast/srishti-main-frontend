@@ -9,8 +9,8 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
 import { experiences } from "../constants";
-import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { SectionWrapper } from "../hoc";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -46,7 +46,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[14px] font-poppins pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -61,11 +61,15 @@ const Experience = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        <h2 className={`${styles.sectionHeadText} text-center glich`}>
+        <p class="glitch">
+    
+        JOURNEY
+  </p>
+
         </h2>
+        
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
