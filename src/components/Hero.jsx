@@ -38,12 +38,13 @@ const Hero = () => {
   }, []); // Empty dependency array to run effect only once
   return (
     <section
-      className={`relative w-full h-screen mx-auto flex justify-center items-center `}
+      className={`relative w-full h-screen mx-auto   grid  sm:flex items-center justify-center lg:justify-center lg:items-center  `}
     >
       {/* <ComputersCanvas /> */}
-      <div className="font-potra relative  flex items-center justify-center z-10  max-w-7xl mx-auto  ">
+
+      <div className="font-potra mt-10 md:mt-0  relative justify-self-start   flex flex-col md:items-center md:justify-center z-10  max-w-7xl mx-auto  ">
         <h1
-          className="text-2xl leading-6 absolute top-[-75px] tracking-[24px] left-0  w-max "
+          className=" text-sm  tracking-[3.2px] absolute top-0 xs:text-sm xs:tracking-[7px] sm:text-sm sm:tracking-[10.8px] md:text-base md:tracking-[15.6px] lg:absolute lg:tracking-[26.1px]  lg:top-[12px]     xl:top-[25px] xl:tracking-[30.8px] left-0  w-max "
           style={{}}
         >
           Techno management fest
@@ -51,10 +52,10 @@ const Hero = () => {
         <div className="flex">
           {"Shristi"?.split("").map((word, index, currentArray) => (
             <h1
-              className={`text-[8rem] leading-6 ${
+              className={` text-[3rem] xs:text-[4rem] sm:text-[4rem] md:text-[5rem] lg:text-[8rem] ${
                 currentArray.length - 1 === index
                   ? " tracking-normal "
-                  : " tracking-[56px]"
+                  : " tracking-[16px] xs:tracking-[30x] sm:tracking-[30px] md:tracking-[40px] lg:tracking-[40px] xl:tracking-[56px]"
               }  w-max`}
               key={index}
 
@@ -65,7 +66,7 @@ const Hero = () => {
           ))}
         </div>
         <h1
-          className="text-2xl leading-6  tracking-[20px] absolute  bottom-[-80px] grid grid-cols-3 items-center  "
+          className=" leading-6  w-full  grid grid-cols-3 items-center text-sm  tracking-[5px] absolute -bottom-2 xs:text-sm xs:tracking-[7px] sm:text-sm sm:tracking-[10.8px] md:text-base md:tracking-[15.6px] lg:absolute lg:tracking-[20px] md:bottom-0 lg:bottom-2  xl:tracking-[30.8px] left-0   "
           style={{}}
         >
           <div className="h-0.5 bg-white  "></div>
@@ -73,9 +74,11 @@ const Hero = () => {
           <div className="h-0.5 bg-white  "></div>
         </h1>
       </div>
+
+
       <div className=" mix-blend-normal  ">
         <img
-          src="/high_res.jpeg"
+          src="/hero_rectt.png"
           className="w-full   absolute left-0 top-0 mix-blend-color-burn -z-10 opacity-0.3 image"
           style={
             {
