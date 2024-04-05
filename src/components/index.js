@@ -12,7 +12,8 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Events from "./Events";
 import Footer from "./Footer";
-import Background from "./Background"
+import LoaderComponent from "./LoaderComponent";
+import Background from "./Background";
 
 
 export {
@@ -34,6 +35,6 @@ export {
   Events,
   Footer,
   Background,
-
+  LoaderComponent,
 
 };
