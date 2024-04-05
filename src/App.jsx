@@ -26,7 +26,6 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-        <Routes>
           <Route
             index
             element={
@@ -107,7 +106,7 @@ const App = () => {
 
           <Route path="/teams" element={<TeamSection />}></Route>
           <Route path="/event/:id" element={<SingleEvent />}></Route>
-        </Routes> </Routes>
+        </Routes> 
       </BrowserRouter>
       <Stars />
     </div>
