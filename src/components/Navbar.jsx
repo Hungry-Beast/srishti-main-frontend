@@ -30,36 +30,36 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX
-        } w-full flex items-center py-5 fixed top-0 z-20 font-poppins  ${scrolled ? "bg-primary" : "bg-transparent"
+        } w-full flex items-center py-5 fixed top-0 z-20 font-potra  ${scrolled ? "bg-primary" : "bg-transparent"
         } z-10`}
     >
-      <div className='w-full flex justify-between font-poppins items-center max-w-7xl mx-auto'>
+      <div className='w-full flex justify-between font-potra items-center max-w-7xl mx-auto'>
         <Link
           to='/'
-          className='flex items-center font-poppins  gap-2'
+          className='flex items-center font-potra  gap-2'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 font-poppins object-contain' />
-          <p className='text-white text-[18px] font-poppins font-bold cursor-pointer flex '>
+          <img src={logo} alt='logo' className='w-9 h-9 font-potra object-contain' />
+          <p className='text-white text-[18px] font-potra font-bold cursor-pointer flex '>
             SHRISTI &nbsp;
-            <span className='sm:block hidden font-poppins '> | NERIST</span>
+            <span className='sm:block hidden font-potra '> <span className="font-poppins">|</span>  NERIST</span>
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10 font-poppins  '>
+        <ul className='list-none hidden sm:flex flex-row gap-10 font-potra  '>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}
+              className={`uppercase font-bold text-white font-potra ${nav.highlight&&' highlight '} `}
 
               onClick={() => setActive(nav.title)}
             >
   
               <Link to={`${nav.href}`} className={` `}> 
-              <div className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}>
+              <div className={`uppercase font-bold text-white font-potra ${nav.highlight&&' highlight '} `}>
 
               {nav.title}
               </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center font-poppins '>
+        <div className='sm:hidden flex flex-1 justify-end items-center font-potra '>
           <img
             src={toggle ? close : menu}
             alt='menu'
@@ -85,7 +85,7 @@ const Navbar = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"
+                  className={`font-potra font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"
                     }`}
                   onClick={() => {
                     setToggle(!toggle);
@@ -93,18 +93,18 @@ const Navbar = () => {
                   }}
                 >
 
-                  {nav.id === "Login" ? (
+                  {nav.id === "font-potra Login" ? (
                     <Link to="/login" >
-                      <span className=" font-poppins  NavBar NavBarLogin">
+                      <span className="   NavBar NavBarLogin">
                       {nav.title}
                       </span>
                       </Link>
                   ) : nav.id === "team" ? (
-                    <Link to="/team" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/team" className=" NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : nav.id === "events" ? (
-                    <Link to="/events" className="font-poppins  NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
+                    <Link to="/events" className="NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
                   ) : (
-                    <a href={`#${nav.id}`} className="font-poppins  NavBar">{nav.title}</a>
+                    <a href={`#${nav.id}`} className="  NavBar">{nav.title}</a>
                   )}
                 </li>
               ))}

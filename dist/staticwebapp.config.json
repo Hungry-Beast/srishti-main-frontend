@@ -3,8 +3,8 @@
     "rewrite": "/index.html"
   },
   "routes":[{
-    "route":"htpps://shristi2k24.com",
-    "redirect":"https://www.shristi2k24.com",
+    "route":"shristi2k24.com",
+    "redirect":"www.shristi2k24.com",
     "statusCode":301
   }]
 }
