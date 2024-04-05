@@ -89,12 +89,12 @@ const App = () => {
           <Route
             path="/events"
             element={
-              <div className="relative z-0 h-screen ">
+              <div className="relative z-0 min-h-screen ">
                 <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
                   <Navbar />
                 </div>
                 {/* <StarsCanvas /> */}
-                <div className="h-full flex flex-col justify-center mt-28">
+                <div className="h-full flex flex-col justify-center mt-11">
                   <Events />
                   <Footer />
                 </div>

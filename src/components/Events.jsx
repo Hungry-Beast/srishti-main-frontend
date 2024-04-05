@@ -182,7 +182,7 @@ const Events = () => {
               <h3 className="mb-5 text-2xl font-bold text-event">
                 Main Events
               </h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-4 gap-6 gap-y-14">
                 {events.mainEvents?.map((event, index) => (
                   <div className="work" key={index}>
                     <img src={event.image} alt={event.name} loading="lazy" />
