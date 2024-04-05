@@ -1,5 +1,5 @@
 :root {
-	--twinkle-duration: 4s;
+	--twinkle-duration:3s;
 }
 .stars-wrapper {
     position: fixed;
@@ -41,19 +41,19 @@
 }
 
 .star:nth-child(3n) {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .star:nth-child(7n) {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .star:nth-child(13n) {
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .star:nth-child(19n) {
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 .comet {

@@ -10,7 +10,7 @@ const Footer = (props) => {
 
   const conditionalClasses = props.isEvents ? "fixed" : "";
   return (
-    <footer className={` bg-black text-white py-4 bottom-0 w-full ${conditionalClasses}`}>
+    <footer className={` bg-black text-white py-4 bottom-0 w-full `}>
       <div className="flex margin-auto">
       <div className="container mx-auto">
         <div className="flex justify-center mb-4">

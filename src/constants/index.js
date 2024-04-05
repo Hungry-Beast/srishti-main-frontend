@@ -33,20 +33,25 @@ export const navLinks = [
   {
     id: "events",
     title: "Events",
+    href:"/events"
   },
   {
     id: "about",
     title: "About",
+    href:"#about"
   },
 
   {
     id: "team",
     title: "Team",
+    href:"/team"
   },
 
   {
     id: "Login",
     title: "Login",
+    href:"/login",
+    highlight:true
   },
   // {
   //   id: "Login",
