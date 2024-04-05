@@ -26,10 +26,14 @@ export const functionWrapper = {
 
     get: (url) => {
 
+        // const user = JSON.parse(localSTorage.getItem('user'))
+
+
         const requestOptions = {
             method: "GET",
             headers: myHeaders,
             redirect: "follow"
+
         };
         return fetch(url, requestOptions)
             .then((response) => response.json())
@@ -49,8 +53,6 @@ export const functionWrapper = {
         };
 
         return fetch(url, requestOptions)
-            .then((response) => response.text())
-            .then((result) => console.log(result))
-            .catch((error) => console.error(error));
+            ;
     }
 }

@@ -19,7 +19,8 @@ import { SelectOption } from "./constants";
 import TeamSection from "./components/Team/Team";
 import SingleEvent from "./components/SingleEvent";
 import Stars from "./components/BackgroundStar/Stars";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   return (
     <div>
@@ -104,8 +105,9 @@ const App = () => {
           <Route path="/test" element={<div className="relative z-0 "></div>} />
 
           <Route path="/teams" element={<TeamSection />}></Route>
-          <Route path="/event/:id" element={<SingleEvent />}></Route>
+          <Route path="/events/:id" element={<SingleEvent />}></Route>
         </Routes>
+        <ToastContainer />
       </BrowserRouter>
       <Stars />
     </div>

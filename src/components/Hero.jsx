@@ -6,7 +6,7 @@ import TextAnimation from "./Background";
 import "./Hero.css";
 import Lottie from "lottie-react";
 import animationData from "../assets/Earth.json";
-import Halo from "vanta/dist/vanta.halo.min";
+// import Halo from "vanta/dist/vanta.halo.min";
 import { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
@@ -38,14 +38,12 @@ const Hero = () => {
   }, []); // Empty dependency array to run effect only once
   return (
     <section
-      className={`relative w-full h-screen mx-auto flex justify-center items-center `}
-    >
+      className={`relative w-full h-screen mx-auto flex justify-center items-center `}>
       {/* <ComputersCanvas /> */}
       <div className="font-potra relative  flex items-center justify-center z-10  max-w-7xl mx-auto  ">
         <h1
           className="text-2xl leading-6 absolute top-[-75px] tracking-[24px] left-0  w-max "
-          style={{}}
-        >
+          style={{}}>
           Techno management fest
         </h1>
         <div className="flex">
@@ -66,8 +64,7 @@ const Hero = () => {
         </div>
         <h1
           className="text-2xl leading-6  tracking-[20px] absolute  bottom-[-80px] grid grid-cols-3 items-center  "
-          style={{}}
-        >
+          style={{}}>
           <div className="h-0.5 bg-white  "></div>
           2K24
           <div className="h-0.5 bg-white  "></div>
