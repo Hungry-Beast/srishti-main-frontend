@@ -35,5 +35,22 @@ export const functionWrapper = {
             .then((response) => response.json())
             .then((result) => result)
             .catch((error) => error);
+    },
+
+    post: (url, payload) => {
+
+
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: payload,
+            redirect: "follow"
+        };
+
+        return fetch(url, requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
     }
 }

@@ -1,22 +1,19 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
-
-    align-items: center;
-    justify-content: center;
+html {
+  align-items: center;
+  justify-content: center;
 }
-.container{
-        margin: auto;
-        width: 50%;
-        padding: 10px;
+.container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
-
-.NavBar{
-    font-weight: 700;
+.NavBar {
+  font-weight: 700;
 }
 /* .NavBarLogin{
     color: transparent;
@@ -34,123 +31,124 @@ html{
     -webkit-text-fill-color: #804dee;
 
 } */
-#ClubName{
-    font-size: large;
+#ClubName {
+  font-size: large;
 }
 
-.EventsClass{
-    margin-top: 100px !important;
+.EventsClass {
+  margin-top: 100px !important;
 }
 
-#potfolio{
-    margin-top: 50% !important;
-    padding: 50px 0;
-
+#potfolio {
+  margin-top: 50% !important;
+  padding: 50px 0;
 }
 
-.work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
 }
 
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
 }
-.work iframe{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
-}
-
-.layer{
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.6), #ab43d7);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
+.work iframe {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
 }
 
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
+.layer {
+  width: 100%;
+  height: 0%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    to left bottom,
+    rgba(0, 0, 0, 0.4),
+    /* rgba(255, 255, 255, 0.2), */ #0000
+  );
+  backdrop-filter: blur(0.3rem);
+  /* opacity: 0.2; */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.6), #bebcbf); */
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
 }
 
-.layer a{
-    margin-top: 20px;
-    color: #dd004f;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
+.layer h3 {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
-.work:hover img{
-    transform: scale(1.1);
+.layer a {
+  margin-top: 20px;
+  color: #dd004f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
 }
 
-.work:hover .layer{
-    height: 100%;
+.work:hover img {
+  transform: scale(1.1);
 }
 
-
-.btn{
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #804dee;
-    padding: 14px 50px; 
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    transition: background 0.5s;
+.work:hover .layer {
+  height: 100%;
 }
 
-.btn:hover{
-    background: #804dee;
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #804dee;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.5s;
 }
 
-
+.btn:hover {
+  background: #804dee;
+}
 
 @media (max-width: 720px) {
-    .work {
-        display: flex;
-        justify-content: center; /* Center the images horizontally */
-      }
-      .work img {
-        max-width: 100%; /* Set maximum width to ensure images don't exceed their container */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 10px;
-        display: block;
-        transition: transform 0.5s;
-      }      
-      
+  .work {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
   }
-
-
-
+  .work img {
+    max-width: 100%; /* Set maximum width to ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+  }
+}

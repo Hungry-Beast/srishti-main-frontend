@@ -28,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-router-dom": "^6.8.1",
+    "react-switch": "^7.0.0",
     "react-three-fiber": "^6.0.13",
     "react-tilt": "^0.1.4",
     "react-vertical-timeline-component": "^3.6.0",
