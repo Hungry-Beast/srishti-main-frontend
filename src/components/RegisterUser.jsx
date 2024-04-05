@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { styles } from "../styles"; // Assuming you have styles imported correctly
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -10,14 +9,15 @@ import { prodUrl } from "../utils/config";
 import { parse } from "postcss";
 import Switch from "react-switch";
 import { functionWrapper } from "../utils/wrapper";
+import { toast } from "react-toastify";
 
 const RegisterUser = () => {
   const [form, setForm] = useState({
     name: "",
     phoneNo: "",
     password: "",
-    isNeristian: "", // Added isNeristian to the initial state
-    regNo: "", // Added regNo to the initial state
+    isNeristian: "", 
+    regNo: "", 
   });
   const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -57,17 +57,35 @@ const RegisterUser = () => {
     fetch(`${prodUrl}/auth/createUser`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result); // Log the response from the server
-        setLoading(false); // Reset loading state after successful request
-        // Add any additional logic here, such as redirecting the user after successful registration
+        console.log(result); 
+        setLoading(false);
+    
+        if (result.success) {
 
-        localStorage.setItem("user", result);
-        navigate("/");
+          toast.success("Registration successful!" ,{
+            position: "bottom-center"
+          });
+        } else {
+        
+          if (result.error === 1) {
+            toast.error("User with this phone number already exists!",{
+              position: "bottom-center"
+            });
+          } else if (result.error === 2) {
+            toast.error("User with this registration number already exists!",{
+              position: "bottom-center"
+            });
+          } else {
+            toast.error("Registration failed. Please try again later.",{
+              position: "bottom-center"
+            });
+          }
+        }
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false); // Reset loading state in case of error
-        // Handle error, such as displaying an error message to the user
+        setLoading(false);
+ 
       });
 
     e.target.reset();
@@ -80,6 +98,10 @@ const RegisterUser = () => {
       regNo: "",
     });
   };
+
+
+  // error: 1 - user with this phone number already exist
+  //error: 2 - user with this reg number already exist 
 
   return (
     <div
@@ -114,7 +136,7 @@ const RegisterUser = () => {
               <input
                 type="number"
                 name="phoneNo"
-                value={form.phoneNO}
+                value={form.phoneNo}
                 onChange={handleChange}
                 placeholder="Enter your Phone Number"
                 className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white w-[100%] rounded-lg outline-none border-none font-poppins [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
