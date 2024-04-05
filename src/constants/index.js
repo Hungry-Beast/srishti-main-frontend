@@ -23,43 +23,55 @@ import {
   jobit,
   tripguide,
   threejs,
-  day1,day2,day3,day4,
+  day1, day2, day3, day4,
+  MUN, TALK, ROBOSOCCER,
+
+
 } from "../assets";
 
 export const navLinks = [
   {
-    id:"events",
-    title:"Events",
+    id: "events",
+    title: "Events",
+    href:"/events"
   },
   {
     id: "about",
     title: "About",
+    href:"#about"
   },
-  
+
   {
     id: "team",
     title: "Team",
+    href:"/team"
   },
- 
+
   {
     id: "Login",
     title: "Login",
+    href:"/login",
+    highlight:true
   },
+  // {
+  //   id: "Login",
+  //   title: "Login",
+  // },
 
 ];
 
 const services = [
   {
     title: "Shristi Talks",
-    icon: web,
+    icon: TALK,
   },
   {
     title: "ROBOSOCCER",
-    icon: mobile,
+    icon: ROBOSOCCER,
   },
   {
-    title: "MEGAEVENT",
-    icon: backend,
+    title: "MUN",
+    icon: MUN,
   },
   // {
   //   title: "View More",
@@ -140,7 +152,7 @@ const experiences = [
       "Skyward Sling: 4PM-5PM",
       "Mechano Mind Master: 5PM-5:30PM",
       "Debate Competition: 3PM-5PM",
-     " Civil Quest: 3PM-4PM",
+      " Civil Quest: 3PM-4PM",
     ],
   },
   {
@@ -178,7 +190,7 @@ const experiences = [
       "Tame the Track: 10AM-1PM",
       "Haze: 2PM-7PM",
       "Techologic: 10AM-12PM",
-     " Techemend: 3PM-5PM",
+      " Techemend: 3PM-5PM",
       "Design Draft Duel: 9AM-10:30AM",
       "Aqua Thrust Showdown: 11AM-12PM",
       "Thermo Thrill Regatta: 3PM-5PM",
@@ -188,7 +200,7 @@ const experiences = [
     title: "Day 4",
     company_name: "13th April 2024",
     icon: day4,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "Shristi 2024",
     points: [
       "Hackathon Presentation: 10AM-5PM",
@@ -204,7 +216,7 @@ const experiences = [
       "Robo Rampage Rally: 9AM-10AM",
     ],
   },
- 
+
 ];
 
 const testimonials = [
@@ -300,31 +312,31 @@ const projects = [
   },
 ];
 
-{/* using ECE - 0 , CSE - 1 , ME -2 , CE -3 , AE-4, CMS -5 , FR - 6 , EE - 7 ,DEFAULT - 8,  */}
+{/* using ECE - 0 , CSE - 1 , ME -2 , CE -3 , AE-4, CMS -5 , FR - 6 , EE - 7 ,DEFAULT - 8,  */ }
 const AllEvents = [
   {
     name: 'Nightwish',
     Department: 2,
     Day: 1,
     image: 'https://images.pexels.com/photos/20240213/pexels-photo-20240213/free-photo-of-portrait-of-woman-with-flowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription:'As a web developer for matrixesports, my tasks include customizing the WordPress site for esports, managing content, implementing security measures, optimizing performance, and integrating AWS services for reliable hosting. I ensure the website provides an engaging user experience while maintaining security and scalability in the AWS environment.',
-    Registration:'https://github.com/itsxtemper/Java_EMail_Check',
+    Discription: 'As a web developer for matrixesports, my tasks include customizing the WordPress site for esports, managing content, implementing security measures, optimizing performance, and integrating AWS services for reliable hosting. I ensure the website provides an engaging user experience while maintaining security and scalability in the AWS environment.',
+    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
   },
   {
     name: 'Metallica',
     Department: 0,
     Day: 2,
     image: 'https://images.pexels.com/photos/18031828/pexels-photo-18031828/free-photo-of-composition-of-jewelry-dried-flowers-and-books.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription:'A Java Email Checker is a tool or component developed in the Java programming language that quickly validates email addresses. It checks for correct syntax, verifies the existence of the email domain through DNS records and MX record lookup, and establishes an SMTP connection to ensure potential deliverability. This helps in filtering out invalid or non-functional email addresses.',
-    Registration:'https://github.com/itsxtemper/Java_EMail_Check',
+    Discription: 'A Java Email Checker is a tool or component developed in the Java programming language that quickly validates email addresses. It checks for correct syntax, verifies the existence of the email domain through DNS records and MX record lookup, and establishes an SMTP connection to ensure potential deliverability. This helps in filtering out invalid or non-functional email addresses.',
+    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
   },
   {
     name: 'Nirvana',
     Department: 0,
     Day: 3,
     image: 'https://images.pexels.com/photos/19906220/pexels-photo-19906220/free-photo-of-a-tunnel-with-a-white-wall-and-a-door.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription:'Just Some Leetcode DSA Questions',
-    Registration:'https://github.com/itsxtemper/Java_EMail_Check',
+    Discription: 'Just Some Leetcode DSA Questions',
+    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
   },
 
 
@@ -342,4 +354,4 @@ const SelectOption = [
   },
 ];
 
-export { SelectOption,services, technologies, experiences, testimonials, projects,AllEvents};
+export { SelectOption, services, technologies, experiences, testimonials, projects, AllEvents };

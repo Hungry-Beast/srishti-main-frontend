@@ -63,9 +63,9 @@ const Experience = () => {
         <p className={`${styles.sectionSubText} text-center`}>
         </p>
         <h2 className={`${styles.sectionHeadText} text-center glich`}>
-        <p class="glitch">
+        <p class="glitch xs:tex">
     
-        JOURNEY
+        {/* JOURNEY */}
   </p>
 
         </h2>

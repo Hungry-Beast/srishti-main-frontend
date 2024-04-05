@@ -15,7 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      if (scrollTop > 80) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav
       className={`${styles.paddingX
         } w-full flex items-center py-5 fixed top-0 z-20 font-poppins  ${scrolled ? "bg-primary" : "bg-transparent"
-        }`}
+        } z-10`}
     >
       <div className='w-full flex justify-between font-poppins items-center max-w-7xl mx-auto'>
         <Link
@@ -44,7 +44,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 font-poppins object-contain' />
           <p className='text-white text-[18px] font-poppins font-bold cursor-pointer flex '>
-            Shristi 2k24 &nbsp;
+            SHRISTI &nbsp;
             <span className='sm:block hidden font-poppins '> | NERIST</span>
           </p>
         </Link>
@@ -53,21 +53,17 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer font-poppins  `}
+              className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}
 
               onClick={() => setActive(nav.title)}
             >
   
-              {nav.id === "Login" ? (
-                <Link to="/login" className="font-poppins NavBar NavBarLogin ">{nav.title}</Link>
-              ) : nav.id === "team" ? (
-                <Link to="/team" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-              ) : nav.id === "events" ? (
-                <Link to="/events" className="font-poppins NavBar">{nav.title}</Link> // Modify the href accordingly for the team link
-              ) : (
-                <a href={`#${nav.id}`} className="font-poppins NavBar">{nav.title}</a>
-              )}
+              <Link to={`${nav.href}`} className={` `}> 
+              <div className={`uppercase font-bold text-white font-poppins ${nav.highlight&&' highlight '} `}>
+
+              {nav.title}
+              </div>
+              </Link>
 
             </li>
           ))}

@@ -1,0 +1,86 @@
+/* .logo_gitch{
+    animation: glitch 1s linear infinite;
+  }
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  .logo_gitch:before,
+  .logo_gitch:after{
+    content: attr(Shristi);
+    position: absolute;
+    left: 0;
+  }
+  
+  .logo_gitch:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  .logo_gitch:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  } */
+
+.image {
+  --webkit-mask-image: linear-gradient(
+    rgba(0 0 0 /0.6),
+    rgba(0 0 0 /0.4) 30%,
+    rgba(0 0 0 /0.3) 50%,
+    rgba(0 0 0 /0) 60%,
+    rgba(0 0 0 /0)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0 0 0 /1),
+    rgba(0 0 0 /0.8) 30%,
+    rgba(0 0 0 /0.7) 40%,
+    rgba(0 0 0 /0.6) 48%,
+    rgba(0 0 0 /0.6) 50%,
+    rgba(0 0 0 /0.5) 65%,
+    rgba(0 0 0 /0.0) 75%,
+    rgba(0 0 0 /0)
+  );
+  mix-blend-mode: darken;
+
+  /* clip-path: circle(100% at 50% 50%);
+  -webkit-clip-path: circle(100% at 50% 50%); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+   */
+  clip-path: path("M0 0 L0 70% Q50 100, 100 70% L100 0 Z");
+}

@@ -1,4 +1,4 @@
- import logo from "./logo.svg";
+import logo from "./logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -36,6 +36,11 @@ import day2 from "./Days/Day2.png";
 import day3 from "./Days/Day3.png";
 import day4 from "./Days/Day4.png";
 
+
+import MUN from "./cardPic/MUN.png"
+import TALK from "./cardPic/Talk.png"
+import ROBOSOCCER from "./cardPic/ROBOSOCCER.png"
+
 export {
   logo,
   backend,
@@ -69,4 +74,7 @@ export {
   day2,
   day3,
   day4,
+  MUN,
+  TALK,
+  ROBOSOCCER,
 };
