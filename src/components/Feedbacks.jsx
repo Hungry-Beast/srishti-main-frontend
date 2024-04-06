@@ -45,13 +45,13 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    <div className={`mt-12 backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70 rounded-[20px]`}>
       <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
+        className={`${styles.padding} sm:min-h-[300px] min-h-[300px]`}
       >
         <motion.div variants={textVariant()}>
           {/* <p className={styles.sectionSubText}></p> */}
-          <h2 className={styles.sectionHeadText}>Executives.</h2>
+          <h2 className={styles.sectionHeadText}>Messages.</h2>
         </motion.div>
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap justify-center gap-7`}>

@@ -51,7 +51,10 @@ const App = () => {
                     <Hero />
                   </div>
                   <About />
-                  <Experience />
+                  <div id="journey">
+
+                  <Experience  />
+                  </div>
                   {/* <Works /> */}
                   <Feedbacks />
                   <Footer />

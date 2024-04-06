@@ -57,6 +57,7 @@ const Events = () => {
       }
     } catch (error) {
       console.error("Error fetching events:", error);
+      setEvents([])
     } finally {
       setLoading(false);
     }
@@ -175,11 +176,11 @@ const Events = () => {
           </Select>
         </div>
 
-        <div className="container">
+        <div className="">
           <>
             <div className="mt-10 ">
-              <h3 className="mb-5 text-2xl font-bold text-event">
-                Main Events of {events?.mainEvents[0]?.clubName}
+              <h3 className="mb-5 text-xl text-center md:text-left  sm:text-2xl font-bold text-event">
+                Main Events of {events?.mainEvents?.[0]?.clubName}
               </h3>
 
               <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14 `}>

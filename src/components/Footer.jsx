@@ -5,9 +5,18 @@ import {
   faYoutube,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons"; // Importing Instagram icon from free-brands-svg-icons
+import { Link } from "react-router-dom";
 
 const Footer = (props) => {
   const conditionalClasses = props.isEvents ? "fixed" : "";
+
+  const handleSmoothScroll = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className={` bg-black text-white py-4 bottom-0 w-full`}>
       <div className="flex margin-auto container">
@@ -43,27 +52,32 @@ const Footer = (props) => {
           <div className="flex justify-center mb-4">
             <ul className="flex space-x-4 md:space-x-16 sm:space-x-6 font-poppins">
               <li>
-                <a href="/events" className="text-xs ">
+                <Link to="/events" className="text-xs ">
                   EVENTS
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="/#work" className="text-xs ">
-                  ROADMAP
-                </a>
+                <Link
+                  to="/#journey"
+                  className="text-xs "
+                  onClick={() => handleSmoothScroll("journey")}
+                >
+                  JOURNEY
+                </Link>
               </li>
 
               <li>
-                <a href="/team" className="text-xs ">
+                <Link to="/team" className="text-xs ">
                   TEAM
-                </a>
+                </Link>
               </li>
 
               <li>
                 <a
                   href="mailto:contact@email.shristi2k24.com"
-                  className="text-xs ">
+                  className="text-xs "
+                >
                   CONTACT
                 </a>
               </li>

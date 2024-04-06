@@ -73,7 +73,7 @@
     rgba(0 0 0 /0.6) 48%,
     rgba(0 0 0 /0.6) 50%,
     rgba(0 0 0 /0.5) 65%,
-    rgba(0 0 0 /0.0) 75%,
+    rgba(0 0 0 /0) 75%,
     rgba(0 0 0 /0)
   );
   mix-blend-mode: darken;
@@ -83,4 +83,31 @@
   /* clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
    */
   clip-path: path("M0 0 L0 70% Q50 100, 100 70% L100 0 Z");
+}
+
+.text-image-anitmation {
+  background-image: url(/public/hero_full.png);
+  background-size: contain;
+  background-position: bottom;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: text-image-animation 3s infinite;
+  color: rgba(255, 255, 255, 0.8) !important;
+  filter: brightness(220%);
+}
+
+
+
+.on {
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-shadow: 0px 0px 8px rgb(255, 255, 255),
+    0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+.white {
+  color: white;
+}
+.hide {
+  display: hidden !important;
+  opacity: 0;
 }
