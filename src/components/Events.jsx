@@ -155,7 +155,7 @@ const Events = () => {
             }}
             onChange={(e) => fetchEvents(e.target.value)}
             value={selectedClub}
-            defaultSelectedKeys={[staticClubs[0]._id]}
+            defaultSelectedKeys={[selectedClub||staticClubs[0]._id]}
             // selectedKeys={}
           >
             {staticClubs.map((club, index) => {

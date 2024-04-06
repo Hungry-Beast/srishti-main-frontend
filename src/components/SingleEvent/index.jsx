@@ -19,6 +19,37 @@ const SingleEvent = () => {
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
   };
+  const getEventData = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get(
+        `${prodUrl}/events/event/noAuth/${id}?optionalAuth=true`
+      );
+      console.log(res);
+      setEventData(res.data);
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to fetch event data. Please try again later.", {
+        position: "bottom-center",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getAuthEvent = async () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    functionWrapper
+      .get(prodUrl + "/events/event/" + id)
+      .then((res) => {
+        setEventData(res);
+        // setEvents(res[1]);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -60,12 +91,18 @@ const SingleEvent = () => {
     // console.log(raw);
     functionWrapper
       .post(`${prodUrl}/registration`, formdata)
-      .then((res) => {
-        console.log(res);
+      .then(async (res) => {
         if (res.ok) {
           toast.success("Successfully registered.", {
             position: "bottom-center",
           });
+          const user = JSON.parse(localStorage.getItem("user"));
+
+          if (user) {
+            getAuthEvent();
+          } else {
+            getEventData();
+          }
           // navigate("/events");
         } else throw res.statusText;
       })
@@ -79,40 +116,13 @@ const SingleEvent = () => {
       .finally(() => setLoading(false));
   };
 
-  const getEventData = async () => {
-    try {
-      const res = await axios.get(
-        `${prodUrl}/events/event/noAuth/${id}?optionalAuth=true`
-      );
-      console.log(res);
-      setEventData(res.data);
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to fetch event data. Please try again later.", {
-        position: "bottom-center",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
     setLoading(true);
 
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) {
-      functionWrapper
-        .get(prodUrl + "/events/event/" + id)
-        .then((res) => {
-          console.log("registered events", res);
-          setEventData(res);
-          // setEvents(res[1]);
-        })
-        .catch((err) => console.log(err))
-        .finally(() => {
-          setLoading(false);
-        });
+      getAuthEvent();
     } else {
       getEventData();
     }
@@ -140,7 +150,8 @@ const SingleEvent = () => {
                 <div className="cursor-not-allowed">
                   <button
                     className=" btn-register font-potra px-[90px] sm:px-[100px] sm:ml-3 text-[21px]  border-2  bg-[#804dee] border-slate-200 uppercase pointer-events-none"
-                    type="submit">
+                    type="submit"
+                  >
                     Registered
                   </button>
                 </div>
@@ -148,7 +159,8 @@ const SingleEvent = () => {
                 <button
                   className=" btn-register font-potra px-[90px] sm:px-[100px] sm:ml-3 text-[21px]"
                   type="submit"
-                  onClick={() => handleRegister(event)}>
+                  onClick={(e) => handleRegister(e)}
+                >
                   REGISTER
                 </button>
               )}
@@ -167,14 +179,19 @@ const SingleEvent = () => {
               <div className="flex lg:items-center mb-4 flex-col gap-4 items-start lg:flex-row">
                 <p className="mr-2 flex gap-2 items-center">
                   <span className="bg-white text-black p-2  rounded font-potra">
-                    {eventData?.time?.split(":")[0]}
+                    {+eventData.time.split(":")[0] > 12
+                      ? String(+eventData.time.split(":")[0] % 12).padStart(
+                          2,
+                          "0"
+                        )
+                      : eventData.time.split(":")[0]}
                   </span>{" "}
                   :
                   <span className="bg-white text-black p-2 rounded font-potra">
                     {eventData?.time.split(":")[1]}
                   </span>{" "}
                   <span className="bg-white text-black p-2 rounded font-potra">
-                    {eventData?.time.includes("am") ? "am" : "pm"}
+                    {+eventData.time.split(":")[0] > 12 ? "pm" : "am"}
                   </span>
                 </p>
                 <p className="font-potra  bg-white text-black p-[5px] rounded">
@@ -193,7 +210,8 @@ const SingleEvent = () => {
               style={{
                 maxHeight: isReadMore ? "300px" : "300px",
                 overflowY: "visible",
-              }}>
+              }}
+            >
               <div className="event-description font-poppins pb-9">
                 <div
                   className="font-popppins"
