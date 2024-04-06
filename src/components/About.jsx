@@ -51,7 +51,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="flex justify-center text-center font-poppins">
+        className="flex justify-center font-poppins text-justify ">
         <b className="font-poppins">
           At NERIST, we ignite a passion for exploration. Shristi is a vibrant
           stage where students from across the region converge to showcase their
