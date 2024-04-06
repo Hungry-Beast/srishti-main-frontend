@@ -5,10 +5,10 @@ const Stars = () => {
     const starElements = [];
     for (let s = 0; s < 3; ++s) {
         const stars = [];
-        for (let i = 0; i < 200; ++i) {
+        for (let i = 0; i < 250; ++i) {
             const cx = `${Math.round(Math.random() * 10000) / 100}%`;
             const cy = `${Math.round(Math.random() * 10000) / 100}%`;
-            const r = `${Math.round((Math.random() + 0.5) * 14) / 10}`;
+            const r = `${Math.round((Math.random() + 0.5) * 12) / 10}`;
             stars.push(<circle key={`star-${s}-${i}`} cx={cx} cy={cy} r={r} className="star" />);
         }
         starElements.push(
