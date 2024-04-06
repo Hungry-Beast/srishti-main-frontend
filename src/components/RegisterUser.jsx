@@ -5,23 +5,31 @@ import { styles } from "../styles"; // Assuming you have styles imported correct
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion"; // Assuming you have slideIn imported correctly
-import { prodUrl } from "../utils/config";
+import { localUrl, prodUrl } from "../utils/config";
 import { parse } from "postcss";
 import Switch from "react-switch";
 import { functionWrapper } from "../utils/wrapper";
 import { toast } from "react-toastify";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const RegisterUser = () => {
   const [form, setForm] = useState({
     name: "",
     phoneNo: "",
     password: "",
-    isNeristian: "", 
-    regNo: "", 
+    isNeristian: "",
+    regNo: "",
+  });
+  const [formErrors, setFormErrors] = useState({
+    name: false,
+    phoneNo: false,
+    password: false,
+    isNeristian: false,
+    regNo: false,
   });
   const [loading, setLoading] = useState(false);
   const [checked, setChecked] = useState(false);
-  const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,11 +37,51 @@ const RegisterUser = () => {
       ...form,
       [name]: value,
     });
+
+    setFormErrors({
+      ...formErrors,
+      [name]: false,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    let isErrors = false;
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const registrationNoRegex = /\d{6}/;
+
+    const isValidPhoneNumber = phoneRegex.test(form.phoneNo);
+
+    const isValidRegistrationNo = registrationNoRegex.test(form.regNo);
+
+    let errorsOccured = {
+      name: false,
+      phoneNo: false,
+      password: false,
+      isNeristian: false,
+      regNo: false,
+    };
+
+    if (!isValidPhoneNumber) {
+      errorsOccured.phoneNo = true;
+      isErrors = true;
+    }
+
+    if (form.password.length < 6) {
+      errorsOccured.password = true;
+      isErrors = true;
+    }
+
+    if (form.isNeristian && isValidRegistrationNo) {
+      errorsOccured.regNo = true;
+      isErrors = true;
+    }
+
+    if (isErrors) {
+      setFormErrors({ ...errorsOccured });
+      return;
+    }
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -43,9 +91,8 @@ const RegisterUser = () => {
       password: form.password,
       phoneNo: form.phoneNo, // Assuming you have this field in your form state
       regNo: form.regNo,
-      // email: form.email,
+      isNeristian: form.isNeristian ? "s" : "o",
     });
-    console.log(JSON.parse(raw));
 
     const requestOptions = {
       method: "POST",
@@ -57,27 +104,26 @@ const RegisterUser = () => {
     fetch(`${prodUrl}/auth/createUser`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result); 
         setLoading(false);
-    
-        if (result.success) {
 
-          toast.success("Registration successful!" ,{
-            position: "bottom-center"
+        if (result.success) {
+          toast.success("Registration successful!", {
+            position: "bottom-center",
           });
+          localStorage.setItem("user", JSON.stringify(result));
+          window.location.href = "/";
         } else {
-        
           if (result.error === 1) {
-            toast.error("User with this phone number already exists!",{
-              position: "bottom-center"
+            toast.error("User with this phone number already exists!", {
+              position: "bottom-center",
             });
           } else if (result.error === 2) {
-            toast.error("User with this registration number already exists!",{
-              position: "bottom-center"
+            toast.error("User with this registration number already exists!", {
+              position: "bottom-center",
             });
           } else {
-            toast.error("Registration failed. Please try again later.",{
-              position: "bottom-center"
+            toast.error("Registration failed. Please try again later.", {
+              position: "bottom-center",
             });
           }
         }
@@ -85,30 +131,30 @@ const RegisterUser = () => {
       .catch((error) => {
         console.error(error);
         setLoading(false);
- 
       });
 
     e.target.reset();
     setChecked(false);
-    setForm({
-      name: "",
-      phoneNo: "",
-      password: "",
-      isNeristian: "",
-      regNo: "",
-    });
+    // setForm({
+    //   name: "",
+    //   phoneNo: "",
+    //   password: "",
+    //   isNeristian: "",
+    //   regNo: "",
+    // });
   };
 
-
   // error: 1 - user with this phone number already exist
-  //error: 2 - user with this reg number already exist 
+  //error: 2 - user with this reg number already exist
 
   return (
     <div
-      className={`xl:mt-8 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
+      className={`xl:mt-8 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+    >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] p-8 rounded-2xl backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70">
+        className="flex-[0.75] p-8 rounded-2xl backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70"
+      >
         <p className={styles.sectionSubText}>Shristi 2k24</p>
         <h3 className={styles.sectionHeadText}>Register.</h3>
 
@@ -118,7 +164,7 @@ const RegisterUser = () => {
               Your Name
             </span>
             <input
-              minLength={"10"}
+              minLength={"3"}
               type="text"
               name="name"
               value={form.name}
@@ -128,9 +174,17 @@ const RegisterUser = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4  font-poppins">
-              Phone Number
-            </span>
+            {formErrors.phoneNo ? (
+              <span className=" font-medium mb-4 font-poppins text-red-500 ">
+                Please Enter a Vaild Phone Number
+              </span>
+            ) : (
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4 font-poppins">
+                  Phone Number
+                </span>
+              </label>
+            )}
             <div className="flex w-full items-center gap-2">
               <span className="font-poppins">+91</span>
               <input
@@ -161,7 +215,6 @@ const RegisterUser = () => {
               className="bg-black-100"
               onColor="#A77EFF"
               onHandleColor="#915EFF"
-              required
             />
           </label>
           {form.isNeristian && (
@@ -179,23 +232,44 @@ const RegisterUser = () => {
               />
             </label>
           )}
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4 font-poppins">
-              Password
-            </span>
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
-            />
-          </label>
+          <div className="relative">
+            {formErrors.password ? (
+              <span className=" font-medium mb-4 font-poppins text-red-500 ">
+                Please Enter a Vaild Password
+              </span>
+            ) : (
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4 font-poppins">
+                  Password
+                </span>
+              </label>
+            )}
+
+            <div
+              className={`backdrop-blur-sm  bg-gray-800/70  placeholder:text-secondary text-white rounded-lg ${
+                formErrors.password
+                  ? "outline-red-600 border-red-600 "
+                  : "outline-none border-none border-gray-700"
+              }  font-poppins flex  items-center `}
+            >
+              <input
+                type={visible ? "text" : "password"}
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                className="w-full py-4 px-6 bg-transparent h-full outline-none border-none "
+              />
+              <div className="pr-2" onClick={() => setVisible(!visible)}>
+                {visible ? <IoEye size={24} /> : <IoEyeOff size={24} />}
+              </div>
+            </div>
+          </div>
 
           <button
             type="submit"
-            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold font-poppins ">
+            className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold font-poppins "
+          >
             Register User
           </button>
           <Link to="/login">
@@ -207,7 +281,8 @@ const RegisterUser = () => {
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="hidden md:block xl:flex-1 xl:w-auto md:w-full">
+        className="hidden md:block xl:flex-1 xl:w-auto md:w-full"
+      >
         <EarthCanvas />
       </motion.div>
     </div>

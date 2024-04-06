@@ -69,26 +69,13 @@ const App = () => {
                 <div className="relative z-0">
                   <Contact />
                   <Footer />
-                  <StarsCanvas />
-                </div>
-              </div>
-            }
-          />
-
-          <Route
-            path="/login"
-            element={
-              <div className="relative z-0 ">
-                <Navbar2 />
-                <div className="relative z-0">
-                  <Contact />
-                  <Footer />
                   {/* <StarsCanvas /> */}
                 </div>
               </div>
             }
           />
 
+       
           <Route
             path="/register"
             element={
