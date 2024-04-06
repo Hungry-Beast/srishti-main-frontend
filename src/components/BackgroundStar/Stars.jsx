@@ -8,7 +8,7 @@ const Stars = () => {
         for (let i = 0; i < 200; ++i) {
             const cx = `${Math.round(Math.random() * 10000) / 100}%`;
             const cy = `${Math.round(Math.random() * 10000) / 100}%`;
-            const r = `${Math.round((Math.random() + 0.5) * 10) / 10}`;
+            const r = `${Math.round((Math.random() + 0.5) * 14) / 10}`;
             stars.push(<circle key={`star-${s}-${i}`} cx={cx} cy={cy} r={r} className="star" />);
         }
         starElements.push(
@@ -56,13 +56,13 @@ const Stars = () => {
                     <ellipse className="comet comet-c" fill="url(#comet-gradient)" cx="40%" cy="100%" rx="150" ry="2" />
                 </g>
                 <g transform="rotate(-75)">
-                    <ellipse className="comet comet-a" fill="url(#comet-gradient)" cx="0" cy="0" rx="150" ry="2" />
+                    <ellipse className="comet comet-a" fill="url(#comet-gradient)" cx="0" cy="0" rx="150" ry="4" />
                 </g>
                 <g transform="rotate(120)">
-                    <ellipse className="comet comet-b" fill="url(#comet-gradient)" cx="100%" cy="0" rx="150" ry="2" />
+                    <ellipse className="comet comet-b" fill="url(#comet-gradient)" cx="100%" cy="0" rx="150" ry="3" />
                 </g>
                 <g transform="rotate(300)">
-                    <ellipse className="comet comet-c" fill="url(#comet-gradient)" cx="40%" cy="100%" rx="150" ry="2" />
+                    <ellipse className="comet comet-c" fill="url(#comet-gradient)" cx="40%" cy="100%" rx="150" ry="10" />
                 </g>
             </svg>
         </div>
