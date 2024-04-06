@@ -88,7 +88,7 @@ function TeamSection() {
 
   return (
     <section>
-      <div className="row">
+      <div className="row m-14">
         <h1 className="font-potra">Our Team</h1>
       </div>
       <div className="row">

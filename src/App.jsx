@@ -52,8 +52,7 @@ const App = () => {
                   </div>
                   <About />
                   <div id="journey">
-
-                  <Experience  />
+                    <Experience />
                   </div>
                   {/* <Works /> */}
                   <Feedbacks />
@@ -77,7 +76,6 @@ const App = () => {
             }
           />
 
-       
           <Route
             path="/register"
             element={
@@ -108,7 +106,15 @@ const App = () => {
           />
           {/* <Route path="/test" element={<div className="relative z-0 "></div>} /> */}
 
-          <Route path="/team" element={<TeamSection />}></Route>
+          <Route
+            path="/team"
+            element={
+              <div className="relative">
+              <Navbar/>
+                <TeamSection />
+              </div>
+            }
+          ></Route>
 
           <Route path="/events/:id" element={<SingleEvent />}></Route>
           <Route path="*" element={<LostInSpaceAnimation />} />
