@@ -183,7 +183,6 @@ const experiences = [
       "Know your Plants: 11AM-1PM",
       "Intelligent Investor: 3PM-5PM",
       "Screw you: 10AM-11AM",
-      "Gate Master: 9AM-11PM",
       "Line Follower: 12PM Onwards",
       "Hackathon: 9AM-9PM",
       "Cookie Making: 2PM Onwards",
