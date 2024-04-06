@@ -86,7 +86,7 @@ const Navbar = () => {
                     nav.highlight && " highlight "
                   }   ${
                     nav.id === "Login"
-                      ? "border border-[#bf34a9] p-2 rounded-xl hover:bg-[#bf34a9] hover:transition-background "
+                      ? "border border-[#bf34a9] p-2 rounded-full hover:bg-[#bf34a9] hover:transition-background "
                       : ""
                   }`}
                 >

@@ -272,13 +272,16 @@ html {
   .loading-text {
     font-family: font1;
     letter-spacing: 0.3rem;
+    margin-top:50px;
   }
 
   .therefore {
     font-family: font1;
     font-size: 24px;
     animation: rotate 1s linear infinite;
-    padding-top: 9.5px;
+    /* padding-top: 9.5px; */
+    margin-top: 40px;
+    text-align: center;
     height: fit;
   }
   .loading-number {

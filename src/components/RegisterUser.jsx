@@ -54,6 +54,7 @@ const RegisterUser = () => {
     const isValidPhoneNumber = phoneRegex.test(form.phoneNo);
 
     const isValidRegistrationNo = registrationNoRegex.test(form.regNo);
+    console.log(isValidRegistrationNo);
 
     let errorsOccured = {
       name: false,
@@ -73,13 +74,18 @@ const RegisterUser = () => {
       isErrors = true;
     }
 
-    if (form.isNeristian && isValidRegistrationNo) {
-      errorsOccured.regNo = true;
-      isErrors = true;
+    if (form.isNeristian) {
+      if (!isValidRegistrationNo) {
+        errorsOccured.regNo = true;
+        isErrors = true;
+      }
     }
 
     if (isErrors) {
       setFormErrors({ ...errorsOccured });
+      console.log(errorsOccured);
+      setLoading(false);
+
       return;
     }
 
@@ -127,9 +133,13 @@ const RegisterUser = () => {
             });
           }
         }
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false);
+      })
+      .finally(() => {
         setLoading(false);
       });
 
@@ -219,15 +229,23 @@ const RegisterUser = () => {
           </label>
           {form.isNeristian && (
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4 font-poppins">
-                Registration Number
-              </span>
+              {formErrors.regNo ? (
+                <span className=" font-medium mb-4 font-poppins text-red-500 ">
+                  Please Enter your Reg No
+                </span>
+              ) : (
+                <label className="flex flex-col">
+                  <span className="text-white font-medium mb-4 font-poppins">
+                    Registration No
+                  </span>
+                </label>
+              )}
               <input
                 type="text"
                 name="regNo"
                 value={form.regNo}
                 onChange={handleChange}
-                placeholder="Enter your registration number"
+                placeholder="Enter your reg number"
                 className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
               />
             </label>
@@ -235,7 +253,7 @@ const RegisterUser = () => {
           <div className="relative">
             {formErrors.password ? (
               <span className=" font-medium mb-4 font-poppins text-red-500 ">
-                Please Enter a Vaild Password
+                Password must atleast 6 characters
               </span>
             ) : (
               <label className="flex flex-col">
@@ -269,8 +287,9 @@ const RegisterUser = () => {
           <button
             type="submit"
             className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold font-poppins "
+            disabled={loading}
           >
-            Register User
+             {loading ? "Launching..." : "Register"}
           </button>
           <Link to="/login">
             <span className="text-white underline decoration-solid mt-2">
