@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { prodUrl } from "../../utils/config";
 import "./style.css";
+import ALoader from "../../utils/ALoader";
 
 const Card = ({ member }) => {
   return (
@@ -23,6 +24,7 @@ const Card = ({ member }) => {
   );
 };
 function TeamSection() {
+  const [loading, setLoading] = useState(true);
   const [teamMembers, setTeamMembers] = useState({
     shristi: [],
     web: [],
@@ -44,6 +46,7 @@ function TeamSection() {
 
   useEffect(() => {
     // Fetch data from API using Axios
+    setLoading(true);
     axios
       .get(prodUrl + "/organisers")
       .then((response) => {
@@ -83,52 +86,53 @@ function TeamSection() {
       })
       .catch((error) => {
         console.error("Error fetching team members:", error);
-      });
+      }).finally(() => setLoading(false));
   }, []);
 
   return (
-    <section>
+    <section className="">
+    <ALoader isLoading={loading}/>
       <div className="row m-14">
-        <h1 className="font-potra">Our Team</h1>
+        <h1 className="font-potra text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em] ">Our Team</h1>
       </div>
       <div className="row">
-        <h1 className="font-potra mt-[3%]">Workshop</h1>
+        {/* <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Workshop</h1>
         {teamMembers?.workshop?.map((member) => {
           return <Card member={member} />;
-        })}
-        <h1 className="font-potra mt-[3%]">Web Team</h1>
+        })} */}
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Web Team</h1>
         {teamMembers.web.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Shristi Team</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Shristi Team</h1>
         {teamMembers?.shristi?.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Workshop Team</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Workshop Team</h1>
         {teamMembers.workshop.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Info & Pub Team</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Info & Pub Team</h1>
         {teamMembers.info.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Design Team</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Design Team</h1>
         {teamMembers.designing.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Forestry Department</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Forestry Department</h1>
         {teamMembers.forestry.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Cse department</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Cse department</h1>
         {teamMembers.computer.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Event Incharge</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Event Incharge</h1>
         {teamMembers.event.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%]">Techno Club</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Techno Club</h1>
         {teamMembers.techno.map((member) => {
           return <Card member={member} />;
         })}

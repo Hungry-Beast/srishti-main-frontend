@@ -44,7 +44,7 @@ const About = () => {
       <motion.div variants={textVariant()}>
         {/* <p className={styles.sectionSubText}>ABOUT</p> */}
         {/* <h2 className={'text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] flex justify-center'}>ABOUT.</h2> */}
-        <p class="glitch 'text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] flex justify-center">
+        <p class="glitch 'text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] flex justify-center mb-6">
           About.
         </p>
       </motion.div>
