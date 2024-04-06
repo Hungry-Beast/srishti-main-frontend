@@ -147,7 +147,7 @@ const Events = () => {
             // className="font-poppins font-bold"
             classNames={{
               label: "font-poppins font-bold",
-              trigger: "w-[400px] mt-10",
+              trigger: "max-w-[400px] mt-10",
               popoverContent: "font-poppins font-bold",
               base: "font-poppins",
               innerWrapper: "font-poppins",
