@@ -178,7 +178,7 @@ const Events = () => {
         <div className="container">
           <>
             <div className="mt-10 ">
-              <h3 className="mb-5 text-2xl font-bold text-event">
+              <h3 className="mb-5 text-xl text-center md:text-left  sm:text-2xl font-bold text-event">
                 Main Events of {events?.mainEvents[0]?.clubName}
               </h3>
 
