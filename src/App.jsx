@@ -103,11 +103,12 @@ const App = () => {
               </div>
             }
           />
-          <Route path="/test" element={<div className="relative z-0 "></div>} />
+          {/* <Route path="/test" element={<div className="relative z-0 "></div>} /> */}
 
           <Route path="/teams" element={<TeamSection />}></Route>
 
           <Route path="/events/:id" element={<SingleEvent />}></Route>
+          <Route path="*" element={<LostInSpaceAnimation />} />
         </Routes>
         <ToastContainer />
       </BrowserRouter>
