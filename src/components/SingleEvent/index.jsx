@@ -66,7 +66,7 @@ const SingleEvent = () => {
           toast.success("Successfully registered.", {
             position: "bottom-center",
           });
-          navigate("/events");
+          // navigate("/events");
         } else throw res.statusText;
       })
       .catch((err) => {
@@ -135,7 +135,7 @@ const SingleEvent = () => {
               <div className="border  mx-auto border-white border-l-0 border-t-0 absolute left-[30px] top-[20px] w-[240px] h-[312px] first-letter: sm:left-[19px] sm:top-[15px] sm:w-[315px] sm:h-[380px]"></div>
             </div>
 
-            <div className="mb-9!">
+            <div className="mb-9! flex  justify-center md:block ">
               {eventData.isRegistered ? (
                 <div className="cursor-not-allowed">
                   <button

@@ -136,7 +136,7 @@ const Events = () => {
 
   return (
     <>
-      <div id="portfolio" className="EventsClass max-w-7xl mx-auto h-full">
+      <div id="portfolio" className="EventsClass max-w-7xl mx-auto h-full p-4">
         <h3 className="glitch Event  text-xl font-bold text-center text-events">
           Events
         </h3>
@@ -177,14 +177,14 @@ const Events = () => {
 
         <div className="container">
           <>
-            <div className="mt-10">
+            <div className="mt-10 ">
               <h3 className="mb-5 text-2xl font-bold text-event">
                 Main Events of {events?.mainEvents[0]?.clubName}
               </h3>
 
-              <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14`}>
+              <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14 `}>
                 {events.mainEvents?.map((event, index) => (
-                  <div className="work" key={index}>
+                  <div className="work p-4" key={index}>
                     <img src={event.image} alt={event.name} loading="lazy" />
                     <div className="layer">
                       <h3 className="text-3xl font-extrabold  uppercase text-black ">

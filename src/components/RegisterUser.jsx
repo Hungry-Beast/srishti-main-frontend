@@ -159,7 +159,7 @@ const RegisterUser = () => {
 
   return (
     <div
-      className={`xl:mt-8 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={ ` mt-16 xl:mt-8 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden  `}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -202,7 +202,7 @@ const RegisterUser = () => {
                 name="phoneNo"
                 value={form.phoneNo}
                 onChange={handleChange}
-                placeholder="Enter your Phone Number"
+                placeholder="Enter your Phone No."
                 className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white w-[100%] rounded-lg outline-none border-none font-poppins [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
               />
             </div>
@@ -231,11 +231,11 @@ const RegisterUser = () => {
             <label className="flex flex-col">
               {formErrors.regNo ? (
                 <span className=" font-medium mb-4 font-poppins text-red-500 ">
-                  Please Enter your Reg No
+                  Please enter Valid Reg No
                 </span>
               ) : (
                 <label className="flex flex-col">
-                  <span className="text-white font-medium mb-4 font-poppins">
+                  <span className="text-white font-medium mb-4 font-poppins ">
                     Registration No
                   </span>
                 </label>
@@ -245,7 +245,7 @@ const RegisterUser = () => {
                 name="regNo"
                 value={form.regNo}
                 onChange={handleChange}
-                placeholder="Enter your reg number"
+                placeholder="Reg No Eg : 000000"
                 className="backdrop-blur-sm border-gray-700 bg-gray-800/70 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins"
               />
             </label>
@@ -278,7 +278,7 @@ const RegisterUser = () => {
                 placeholder="Enter your password"
                 className="w-full py-4 px-6 bg-transparent h-full outline-none border-none "
               />
-              <div className="pr-2" onClick={() => setVisible(!visible)}>
+              <div className="pr-6" onClick={() => setVisible(!visible)}>
                 {visible ? <IoEye size={24} /> : <IoEyeOff size={24} />}
               </div>
             </div>

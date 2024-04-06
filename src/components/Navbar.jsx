@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { json, Link, useSearchParams } from "react-router-dom";
 import AvatarLogin from "./AvatarLogin";
 
 import { styles } from "../styles";
@@ -116,26 +116,71 @@ const Navbar = () => {
               className="w-[28px] h-[28px] object-contain"
               onClick={() => setToggle(!toggle)}
             /> */}
+
+{
+  !!user ? (
+    toggle ? (
+      <img
+        src={toggle ? close : menu}
+        alt="menu"
+        className="w-[28px] h-[28px] object-contain"
+        onClick={() => setToggle(!toggle)} 
+      />
+    ) : (
+      <Avatar
+        className="w-[28px]! h-[28px]! object-contain transition-transform text-2xl"
+        onClick={() => setToggle(!toggle)}
+        name={
+          
+             JSON.parse(localStorage.getItem("user"))
+                .name?.charAt(0)
+                .toUpperCase()
+           
+        }
+      />
+    )
+  ) : (
+    toggle ? (
+      <img
+        src={toggle ? close : menu}
+        alt="menu"
+        className="w-[28px] h-[28px] object-contain"
+        onClick={() => setToggle(!toggle)}
+      />
+    ) : (
+      <img
+        className="w-[30px]! h-[20px] object-contain transition-transform text-2xl"
+        onClick={() => setToggle(!toggle)}
+        src={menu}
+      />
+    )
+  )
+}
+
+
+{/* 
             {toggle ? (
               <img
                 src={toggle ? close : menu}
                 alt="menu"
                 className="w-[28px] h-[28px] object-contain"
                 onClick={() => setToggle(!toggle)}
+                
               />
             ) : (
               <Avatar
-                className="w-[28px] h-[28px] object-contain transition-transform text-2xl"
+                className="w-[28px]! h-[28px]! object-contain transition-transform text-2xl"
                 onClick={() => setToggle(!toggle)}
                 name={
-                  !user
+                  !!user
                     ? JSON.parse(localStorage.getItem("user"))
                         ?.name?.charAt(0)
                         ?.toUpperCase()
-                    : "V"
+                    : <img src={menu}></img>
                 }
+                
               />
-            )}
+            )} */}
 
             <div
               className={`${

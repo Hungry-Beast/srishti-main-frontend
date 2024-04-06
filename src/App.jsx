@@ -12,7 +12,6 @@ import {
   LoaderComponent,
   StarsCanvas,
   Contact2,
-  Navbar2,
   Events,
   Footer,
 } from "./components";
@@ -80,7 +79,7 @@ const App = () => {
             path="/register"
             element={
               <div className="relative">
-                <Navbar2 />
+                <Navbar />
                 <div className="relative z-0">
                   <Contact2 />
                   <Footer />
@@ -104,11 +103,12 @@ const App = () => {
               </div>
             }
           />
-          <Route path="/test" element={<div className="relative z-0 "></div>} />
+          {/* <Route path="/test" element={<div className="relative z-0 "></div>} /> */}
 
           <Route path="/teams" element={<TeamSection />}></Route>
 
           <Route path="/events/:id" element={<SingleEvent />}></Route>
+          <Route path="*" element={<LostInSpaceAnimation />} />
         </Routes>
         <ToastContainer />
       </BrowserRouter>
