@@ -79,7 +79,12 @@ const Navbar = () => {
                 className={` font-bold text-white font-potra${
                   nav.highlight && " highlight "
                 } `}
-                onClick={() => setActive(nav.title)}
+                onClick={() => {
+                  setActive(nav.title);
+                  document.getElementById("about")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
               >
                 <div
                   className={` font-bold text-white font-potra ${
@@ -117,48 +122,39 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
             /> */}
 
-{
-  !!user ? (
-    toggle ? (
-      <img
-        src={toggle ? close : menu}
-        alt="menu"
-        className="w-[28px] h-[28px] object-contain"
-        onClick={() => setToggle(!toggle)} 
-      />
-    ) : (
-      <Avatar
-        className="w-[28px]! h-[28px]! object-contain transition-transform text-2xl"
-        onClick={() => setToggle(!toggle)}
-        name={
-          
-             JSON.parse(localStorage.getItem("user"))
-                .name?.charAt(0)
-                .toUpperCase()
-           
-        }
-      />
-    )
-  ) : (
-    toggle ? (
-      <img
-        src={toggle ? close : menu}
-        alt="menu"
-        className="w-[28px] h-[28px] object-contain"
-        onClick={() => setToggle(!toggle)}
-      />
-    ) : (
-      <img
-        className="w-[30px]! h-[20px] object-contain transition-transform text-2xl"
-        onClick={() => setToggle(!toggle)}
-        src={menu}
-      />
-    )
-  )
-}
+            {!!user ? (
+              toggle ? (
+                <img
+                  src={toggle ? close : menu}
+                  alt="menu"
+                  className="w-[28px] h-[28px] object-contain"
+                  onClick={() => setToggle(!toggle)}
+                />
+              ) : (
+                <Avatar
+                  className="w-[28px]! h-[28px]! object-contain transition-transform text-2xl"
+                  onClick={() => setToggle(!toggle)}
+                  name={JSON.parse(localStorage.getItem("user"))
+                    .name?.charAt(0)
+                    .toUpperCase()}
+                />
+              )
+            ) : toggle ? (
+              <img
+                src={toggle ? close : menu}
+                alt="menu"
+                className="w-[28px] h-[28px] object-contain"
+                onClick={() => setToggle(!toggle)}
+              />
+            ) : (
+              <img
+                className="w-[30px]! h-[20px] object-contain transition-transform text-2xl"
+                onClick={() => setToggle(!toggle)}
+                src={menu}
+              />
+            )}
 
-
-{/* 
+            {/* 
             {toggle ? (
               <img
                 src={toggle ? close : menu}
@@ -197,6 +193,9 @@ const Navbar = () => {
                     onClick={() => {
                       setToggle(!toggle);
                       setActive(nav.title);
+                      document.getElementById("about")?.scrollIntoView({
+                        behavior: "smooth",
+                      });
                     }}
                   >
                     {nav.id === "Login" ? (
