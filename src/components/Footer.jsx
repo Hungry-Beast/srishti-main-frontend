@@ -41,7 +41,7 @@ const Footer = (props) => {
             </div>
           </div>
           <div className="flex justify-center mb-4">
-            <ul className="flex md:space-x-16 sm:space-x-6 font-poppins">
+            <ul className="flex space-x-4 md:space-x-16 sm:space-x-6 font-poppins">
               <li>
                 <a href="/events" className="text-xs ">
                   EVENTS

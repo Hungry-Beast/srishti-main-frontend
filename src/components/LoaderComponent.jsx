@@ -5,8 +5,8 @@ const LoaderComponent = () => {
     <div className="Loaderbody Loadercontainer">
       <div id="loader">
         <div id="title" className="flex">
-          <p className="loading-text font-potra">LOADING</p>
-          <div className="therefore">∴</div>
+          <p className="loading-text font-potra" style={{marginTop: 50}}>LOADING</p>
+          <div className="therefore" style={{marginTop: 40}}>∴</div>
           <p className="loading-number">%</p>
         </div>
         <div id="loading-bar-border">

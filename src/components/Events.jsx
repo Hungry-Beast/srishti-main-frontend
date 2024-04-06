@@ -182,7 +182,7 @@ const Events = () => {
                 Main Events of {events?.mainEvents[0]?.clubName}
               </h3>
 
-              <div className={`grid grid-cols-4 gap-6 gap-y-14`}>
+              <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14`}>
                 {events.mainEvents?.map((event, index) => (
                   <div className="work" key={index}>
                     <img src={event.image} alt={event.name} loading="lazy" />
