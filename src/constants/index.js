@@ -23,41 +23,47 @@ import {
   jobit,
   tripguide,
   threejs,
-  day1, day2, day3, day4,
-  MUN, TALK, ROBOSOCCER,
-
-
+  day1,
+  day2,
+  day3,
+  day4,
+  MUN,
+  TALK,
+  ROBOSOCCER,
 } from "../assets";
+
+import Director from "../assets/director.jpg";
+import Coordinator from "../assets/Coordi.jpg";
+import Sec from "../assets/Tallar.jpg";
 
 export const navLinks = [
   {
     id: "events",
     title: "Events",
-    href:"/events"
+    href: "/events",
   },
   {
     id: "about",
     title: "About",
-    href:"/#about"
+    href: "/#about",
   },
 
   {
     id: "team",
     title: "Team",
-    href:"/team"
+    href: "/team",
   },
 
   {
     id: "Login",
     title: "Login",
-    href:"/login",
-    highlight:true
+    href: "/login",
+    highlight: true,
   },
   // {
   //   id: "Login",
   //   title: "Login",
   // },
-
 ];
 
 const services = [
@@ -215,50 +221,32 @@ const experiences = [
       "Robo Rampage Rally: 9AM-10AM",
     ],
   },
-
 ];
 
 const testimonials = [
   {
-    testimonial: 
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nobis.",
-    name: "To Be Updated",
-    designation: "To Be Updated",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    testimonial: `Embrace challenges with courage and enthusiasm, aiming to learn, innovate, and inspire. Let Swami Vivekananda's words drive us forward: "Arise, awake, and stop not until the goal is reached." Best wishes for a successful celebration of creativity, camaraderie, and achievement.`,
+    name: "Prof. Narendranath S",
+    designation: "Director, ",
+    company: "NERIST",
+    image: Director,
   },
   {
-    testimonial: 
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nobis.",
-    name: "To Be Updated",
-    designation: "To Be Updated",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    testimonial: ` It's more than just an event, it's a platform to manifest dreams, drive change, and shape destiny. Let's heed Einstein and Tagore, unleashing imagination and conquering challenges with resolve. Gratitude to the Shristi team for their inspiring dedication to excellence, as we ignite creativity and make this edition unforgettable.`,
+
+    name: "Dr. Madhusudhan Mishra",
+    designation: "Shristi Coordinator",
+    company: "NERIST",
+    image: Coordinator,
   },
   {
-    testimonial: 
-      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nobis.",
-    name: "To Be Updated",
-    designation: "To Be Updated",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    testimonial:
+      "Sometimes, the greatest discoveries are made not within the pages of textbooks, but in the moments of relaxation and creativity when students dare to step away, explore, and innovate beyond the confines of academia.",
+    name: "Narang Tallar",
+    designation: "Shristi Secy.",
+    company: "NERIST",
+    image: Sec,
   },
-  // {
-  //   testimonial:
-  //     "I've never met a web developer who truly cares about their clients' success like Rick does.",
-  //   name: "Chris Brown",
-  //   designation: "COO",
-  //   company: "DEF Corp",
-  //   image: "https://randomuser.me/api/portraits/men/5.jpg",
-  // },
-  // {
-  //   testimonial:
-  //     "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-  //   name: "Lisa Wang",
-  //   designation: "CTO",
-  //   company: "456 Enterprises",
-  //   image: "https://randomuser.me/api/portraits/women/6.jpg",
-  // },
 ];
 
 const projects = [
@@ -327,36 +315,40 @@ const projects = [
   },
 ];
 
-{/* using ECE - 0 , CSE - 1 , ME -2 , CE -3 , AE-4, CMS -5 , FR - 6 , EE - 7 ,DEFAULT - 8,  */ }
+{
+  /* using ECE - 0 , CSE - 1 , ME -2 , CE -3 , AE-4, CMS -5 , FR - 6 , EE - 7 ,DEFAULT - 8,  */
+}
 const AllEvents = [
   {
-    name: 'Nightwish',
+    name: "Nightwish",
     Department: 2,
     Day: 1,
-    image: 'https://images.pexels.com/photos/20240213/pexels-photo-20240213/free-photo-of-portrait-of-woman-with-flowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription: 'As a web developer for matrixesports, my tasks include customizing the WordPress site for esports, managing content, implementing security measures, optimizing performance, and integrating AWS services for reliable hosting. I ensure the website provides an engaging user experience while maintaining security and scalability in the AWS environment.',
-    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
+    image:
+      "https://images.pexels.com/photos/20240213/pexels-photo-20240213/free-photo-of-portrait-of-woman-with-flowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    Discription:
+      "As a web developer for matrixesports, my tasks include customizing the WordPress site for esports, managing content, implementing security measures, optimizing performance, and integrating AWS services for reliable hosting. I ensure the website provides an engaging user experience while maintaining security and scalability in the AWS environment.",
+    Registration: "https://github.com/itsxtemper/Java_EMail_Check",
   },
   {
-    name: 'Metallica',
+    name: "Metallica",
     Department: 0,
     Day: 2,
-    image: 'https://images.pexels.com/photos/18031828/pexels-photo-18031828/free-photo-of-composition-of-jewelry-dried-flowers-and-books.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription: 'A Java Email Checker is a tool or component developed in the Java programming language that quickly validates email addresses. It checks for correct syntax, verifies the existence of the email domain through DNS records and MX record lookup, and establishes an SMTP connection to ensure potential deliverability. This helps in filtering out invalid or non-functional email addresses.',
-    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
+    image:
+      "https://images.pexels.com/photos/18031828/pexels-photo-18031828/free-photo-of-composition-of-jewelry-dried-flowers-and-books.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    Discription:
+      "A Java Email Checker is a tool or component developed in the Java programming language that quickly validates email addresses. It checks for correct syntax, verifies the existence of the email domain through DNS records and MX record lookup, and establishes an SMTP connection to ensure potential deliverability. This helps in filtering out invalid or non-functional email addresses.",
+    Registration: "https://github.com/itsxtemper/Java_EMail_Check",
   },
   {
-    name: 'Nirvana',
+    name: "Nirvana",
     Department: 0,
     Day: 3,
-    image: 'https://images.pexels.com/photos/19906220/pexels-photo-19906220/free-photo-of-a-tunnel-with-a-white-wall-and-a-door.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    Discription: 'Just Some Leetcode DSA Questions',
-    Registration: 'https://github.com/itsxtemper/Java_EMail_Check',
+    image:
+      "https://images.pexels.com/photos/19906220/pexels-photo-19906220/free-photo-of-a-tunnel-with-a-white-wall-and-a-door.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    Discription: "Just Some Leetcode DSA Questions",
+    Registration: "https://github.com/itsxtemper/Java_EMail_Check",
   },
-
-
-]
-
+];
 
 const SelectOption = [
   {
@@ -369,4 +361,12 @@ const SelectOption = [
   },
 ];
 
-export { SelectOption, services, technologies, experiences, testimonials, projects, AllEvents };
+export {
+  SelectOption,
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  AllEvents,
+};
