@@ -31,7 +31,7 @@ import React from "react";
               className="transition-transform cursor-pointer text-base font-poppins"
               showFallback
               style={{fontFamily: 'Poppins'}}
-              name= {JSON.parse(localStorage.getItem("user")).name.charAt(0).toUpperCase()}
+              name= {JSON.parse(localStorage.getItem("user"))?.name?.charAt(0)?.toUpperCase()}
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Static Actions">

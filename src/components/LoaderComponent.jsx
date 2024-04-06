@@ -12,7 +12,7 @@ const LoaderComponent = () => {
         <div id="loading-bar-border">
           <div className="loading-bar"></div>
         </div>
-        <div id="warning">
+        <div id="warning px-2">
           <p>
             <div className="exclamation font-potra">
               &nbsp; CAUTION, Do not turn off.

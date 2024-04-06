@@ -46,7 +46,7 @@ const Navbar = () => {
           scrolled ? "bg-primary" : "bg-transparent"
         } z-10`}
       >
-        <div className="w-full flex justify-between font-potra items-center max-w-7xl mx-auto">
+        <div className="w-full flex justify-between font-potra items-center max-w-7xl mx-auto tracking-[0.9px]">
           <Link
             to="/"
             className="flex items-center font-potra  gap-2"
@@ -60,27 +60,38 @@ const Navbar = () => {
               alt="logo"
               className="w-9 h-9 font-potra object-contain"
             />
-            <p className="text-white text-[18px] font-potra font-bold cursor-pointer flex ">
-              SHRISTI &nbsp;
+            <div className="flex items-center w-fit md:text-[18px]">
+              <p className="text-white xl:text-[24px] font-potra font-bold cursor-pointer flex sm:text-base ">
+                SHRiSTi &nbsp;{" "}
+              </p>
               <span className="sm:block hidden font-potra ">
                 {" "}
-                <span className="font-poppins">|</span> NERIST
+                <span className="font-potra sm:text-base font-bold  xl:text-[24px]">
+                  <span className="font-poppins font-bold">|</span> NERiST
+                </span>
               </span>
-            </p>
+            </div>
           </Link>
-
-          <ul className="list-none hidden sm:flex flex-row gap-10 font-potra  items-center ">
+          <ul className="list-none hidden sm:flex flex-row sm:justify-between sm:gap-2 sm:text-sm font-potra md:gap-10 xl:text-[18.5px]  items-center ">
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
-                className={`uppercase font-bold text-white font-potra ${
+                className={` font-bold text-white font-potra${
                   nav.highlight && " highlight "
                 } `}
                 onClick={() => setActive(nav.title)}
               >
-                {nav.id === "Login" ? (
-                  <>
-                    {!!user ? (
+                <div
+                  className={` font-bold text-white font-potra ${
+                    nav.highlight && " highlight "
+                  }   ${
+                    nav.id === "Login"
+                      ? "border border-[#bf34a9] p-2 rounded-xl hover:bg-[#bf34a9] hover:transition-background "
+                      : ""
+                  }`}
+                >
+                  {nav.id === "Login" ? (
+                    !!user ? (
                       <AvatarLogin isLogin={user} />
                     ) : (
                       <Link to="/login">
@@ -88,21 +99,11 @@ const Navbar = () => {
                           {nav.title}
                         </span>
                       </Link>
-                    )}
-                  </>
-                ) : nav.id === "team" ? (
-                  <Link to="/team" className="font-poppins NavBar">
-                    {nav.title}
-                  </Link> // Modify the href accordingly for the team link
-                ) : nav.id === "events" ? (
-                  <Link to="/events" className="font-poppins NavBar">
-                    {nav.title}
-                  </Link> // Modify the href accordingly for the team link
-                ) : (
-                  <a href={`#${nav.id}`} className="font-poppins NavBar">
-                    {nav.title}
-                  </a>
-                )}
+                    )
+                  ) : (
+                    <Link to={`${nav.href}`}>{nav.title}</Link>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
@@ -116,17 +117,23 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
             /> */}
             {toggle ? (
-               <img
-               src={close}
-               alt="menu"
-               className="w-[28px] h-[28px] object-contain"
-               onClick={() => setToggle(!toggle)}
-             /> 
+              <img
+                src={toggle ? close : menu}
+                alt="menu"
+                className="w-[28px] h-[28px] object-contain"
+                onClick={() => setToggle(!toggle)}
+              />
             ) : (
               <Avatar
                 className="w-[28px] h-[28px] object-contain transition-transform text-2xl"
                 onClick={() => setToggle(!toggle)}
-                name= {!!user ? JSON.parse(localStorage.getItem("user")).name.charAt(0).toUpperCase(): "V"}
+                name={
+                  !user
+                    ? JSON.parse(localStorage.getItem("user"))
+                        ?.name?.charAt(0)
+                        ?.toUpperCase()
+                    : "V"
+                }
               />
             )}
 
