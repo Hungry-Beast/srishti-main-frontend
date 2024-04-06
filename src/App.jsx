@@ -12,7 +12,6 @@ import {
   LoaderComponent,
   StarsCanvas,
   Contact2,
-  Navbar2,
   Events,
   Footer,
 } from "./components";
@@ -80,7 +79,7 @@ const App = () => {
             path="/register"
             element={
               <div className="relative">
-                <Navbar2 />
+                <Navbar />
                 <div className="relative z-0">
                   <Contact2 />
                   <Footer />

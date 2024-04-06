@@ -90,7 +90,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden `}
+      className={`mt-16 xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden `}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -128,7 +128,7 @@ const Contact = () => {
                 name="phoneNo"
                 value={formData.phoneNo}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder="Enter your Phone no"
                 className="backdrop-blur-sm border-2 border-gray-700 bg-gray-800/70  py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-poppins "
               />
             </label>
@@ -162,7 +162,7 @@ const Contact = () => {
                 placeholder="Enter your password"
                 className="w-full py-4 px-6 bg-transparent h-full outline-none border-none "
               />
-              <div className="pr-2" onClick={() => setVisible(!visible)}>
+              <div className="pr-6" onClick={() => setVisible(!visible)}>
                 {visible ? <IoEye size={24} /> : <IoEyeOff size={24} />}
               </div>
             </div>

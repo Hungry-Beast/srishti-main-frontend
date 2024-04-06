@@ -9,6 +9,7 @@ const LoaderComponent = () => {
           <div className="therefore" style={{marginTop: 40}}>∴</div>
           <p className="loading-number">%</p>
         </div>
+       
         <div id="loading-bar-border">
           <div className="loading-bar"></div>
         </div>
