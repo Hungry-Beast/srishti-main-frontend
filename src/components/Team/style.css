@@ -220,25 +220,18 @@ h1 {
   margin-top: 40px;
   padding: 3.5em 1em;
   border-radius: 0.6em;
-  color: #1f003b;
+  color: #ffffff;
   cursor: pointer;
   transition: 0.3s;
-  background-color: #ffffff;
+  background-color: #2c0322;
 }
 
-.card .img-container {
-  width: 8em;
-  height: 8em;
-  background-color: #a993ff;
-  padding: 0.5em;
-  border-radius: 50%;
-  margin: 0 auto 2em auto;
-}
+/*  */
 
-.card img {
+/* .card img {
   width: 100%;
   border-radius: 50%;
-}
+} */
 
 .card h3 {
   font-weight: 500;
@@ -265,14 +258,15 @@ h1 {
   font-size: 1.4em;
 }
 
-.card:hover {
+/* .card:hover {
   background: linear-gradient(#6045ea, #8567f7);
   color: #ffffff;
-}
+  transition: all 15s ease-in-out; 
+} */
 
-.card:hover .img-container {
+/* .card:hover .img-container {
   transform: scale(1.15);
-}
+} */
 
 @media screen and (min-width: 768px) {
   section {

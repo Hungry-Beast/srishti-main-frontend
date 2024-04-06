@@ -47,7 +47,7 @@ const Navbar = () => {
         } z-10`}
       >
         <div className="w-full flex justify-between font-potra items-center max-w-7xl mx-auto tracking-[0.9px]">
-          <Link
+        <Link
             to="/"
             className="flex items-center font-potra  gap-2"
             onClick={() => {
