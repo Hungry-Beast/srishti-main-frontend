@@ -229,10 +229,11 @@ const Navbar = () => {
                         {nav.title}
                       </Link> // Modify the href accordingly for the team link
                     ) : (
-                      <a href={`#${nav.id}`} className="font-poppins  NavBar">
+                      <Link to={`${nav.href}`} className="font-poppins  NavBar">
                         {nav.title}
-                      </a>
-                    )}
+                      </Link>
+                    )
+                    }
                   </li>
                 ))}
               </ul>
