@@ -47,7 +47,7 @@ const Navbar = () => {
         } z-10`}
       >
         <div className="w-full flex justify-between font-potra items-center max-w-7xl mx-auto tracking-[0.9px]">
-        <Link
+          <Link
             to="/"
             className="flex items-center font-potra  gap-2"
             onClick={() => {
@@ -81,9 +81,10 @@ const Navbar = () => {
                 } `}
                 onClick={() => {
                   setActive(nav.title);
-                  document.getElementById("about")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
+                  if (nav.id == "about")
+                    document.getElementById("about")?.scrollIntoView({
+                      behavior: "smooth",
+                    });
                 }}
               >
                 <div
@@ -193,9 +194,10 @@ const Navbar = () => {
                     onClick={() => {
                       setToggle(!toggle);
                       setActive(nav.title);
-                      document.getElementById("about")?.scrollIntoView({
-                        behavior: "smooth",
-                      });
+                      if (nav.id == "about")
+                        document.getElementById("about")?.scrollIntoView({
+                          behavior: "smooth",
+                        });
                     }}
                   >
                     {nav.id === "Login" ? (
@@ -229,9 +231,9 @@ const Navbar = () => {
                         {nav.title}
                       </Link> // Modify the href accordingly for the team link
                     ) : (
-                      <a href={`#${nav.id}`} className="font-poppins  NavBar">
+                      <Link to={`${nav.href}`} className="font-poppins  NavBar">
                         {nav.title}
-                      </a>
+                      </Link>
                     )}
                   </li>
                 ))}

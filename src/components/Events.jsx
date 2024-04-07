@@ -30,6 +30,9 @@ const Events = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchEvents = async (selectedClub) => {
+    if (!selectedClub) {
+      return;
+    }
     setSelectedClubState(selectedClub);
     setSearchParams({ deptId: selectedClub });
     try {
@@ -58,6 +61,8 @@ const Events = () => {
     } catch (error) {
       console.error("Error fetching events:", error);
       setEvents([])
+      navigate("/404");
+      
     } finally {
       setLoading(false);
     }

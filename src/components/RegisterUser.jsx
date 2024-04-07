@@ -97,7 +97,7 @@ const RegisterUser = () => {
       password: form.password,
       phoneNo: form.phoneNo, // Assuming you have this field in your form state
       regNo: form.regNo,
-      isNeristian: form.isNeristian ? "s" : "o",
+      userType: form.isNeristian ? "s" : "o",
     });
 
     const requestOptions = {
