@@ -192,6 +192,7 @@ const Navbar = () => {
                       active === nav.title ? "text-white" : "text-secondary"
                     }`}
                     onClick={() => {
+                      setToggle(!toggle);
                       setActive(nav.title);
                       if (nav.id == "about")
                         document.getElementById("about")?.scrollIntoView({
