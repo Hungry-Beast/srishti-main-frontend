@@ -67,7 +67,7 @@ const App = () => {
             element={
               <div className="relative z-0 ">
                 <Navbar />
-                <div className="relative z-0">
+                <div className="relative z-0 min-h-screen flex flex-col justify-between">
                   <Contact />
                   <Footer />
                   {/* <StarsCanvas /> */}
@@ -81,7 +81,7 @@ const App = () => {
             element={
               <div className="relative">
                 <Navbar />
-                <div className="relative z-0">
+                <div className="relative z-0 min-h-screen flex flex-col justify-between">
                   <Contact2 />
                   <Footer />
                   {/* <StarsCanvas /> */}
@@ -97,7 +97,7 @@ const App = () => {
                   <Navbar />
                 </div>
                 {/* <StarsCanvas /> */}
-                <div className="h-full flex flex-col justify-center mt-11">
+                <div className="h-full flex flex-col min-h-screen justify-between mt-11 ">
                   <Events />
                   <Footer />
                 </div>
