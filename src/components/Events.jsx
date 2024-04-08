@@ -15,6 +15,7 @@ import { Select, SelectItem } from "@nextui-org/select";
 import { staticClubs } from "../utils/constants";
 import ALoader from "../utils/ALoader";
 import { toast } from "react-toastify";
+import { Tooltip } from "@nextui-org/react";
 
 const Events = () => {
   const [events, setEvents] = useState({
@@ -60,9 +61,8 @@ const Events = () => {
       }
     } catch (error) {
       console.error("Error fetching events:", error);
-      setEvents([])
+      setEvents([]);
       navigate("/404");
-      
     } finally {
       setLoading(false);
     }
@@ -161,7 +161,7 @@ const Events = () => {
             }}
             onChange={(e) => fetchEvents(e.target.value)}
             value={selectedClub}
-            defaultSelectedKeys={[selectedClub||staticClubs[0]._id]}
+            defaultSelectedKeys={[selectedClub || staticClubs[0]._id]}
             // selectedKeys={}
           >
             {staticClubs.map((club, index) => {
@@ -173,7 +173,8 @@ const Events = () => {
                   }}
                   className="font-poppins"
                   key={club._id}
-                  value={club._id}>
+                  value={club._id}
+                >
                   {club.name}
                 </SelectItem>
               );
@@ -188,7 +189,9 @@ const Events = () => {
                 Main Events of {events?.mainEvents?.[0]?.clubName}
               </h3>
 
-              <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14 `}>
+              <div
+                className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 2xl:grid-cols-4 gap-6 gap-y-14 `}
+              >
                 {events.mainEvents?.map((event, index) => (
                   <div className="work p-4" key={index}>
                     <img src={event.image} alt={event.name} loading="lazy" />
@@ -209,25 +212,42 @@ const Events = () => {
                             navigate(
                               `/events/${event.id ? event.id : event["_id"]}`
                             )
-                          }>
+                          }
+                        >
                           View More
                         </button>
                         {event.isRegistered ? (
                           <div className="cursor-not-allowed">
                             <button
                               className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2  bg-[#804dee] border-slate-200 uppercase pointer-events-none"
-                              type="submit">
+                              type="submit"
+                            >
                               Registered
                             </button>
                           </div>
-                        ) : (
+                        ) : !event.disabled ? (
                           <div>
                             <button
                               className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2   border-[#804dee] bg-black bg-opacity-60 uppercase"
                               type="submit"
-                              onClick={() => handleRegister(event)}>
+                              onClick={() => handleRegister(event)}
+                              disabled={event.disabled}
+                            >
                               Register
                             </button>
+                          </div>
+                        ) : (
+                          <div>
+                            <Tooltip content="Registration Closed For This Event or You Are not eligible for this event">
+                              <button
+                                className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2   border-[#804dee] bg-black bg-opacity-60 uppercase cursor-not-allowed"
+                                type="submit"
+                                onClick={() => handleRegister(event)}
+                                disabled={event.disabled}
+                              >
+                                Register
+                              </button>
+                            </Tooltip>
                           </div>
                         )}
                       </div>
