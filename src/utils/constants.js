@@ -88,5 +88,15 @@ export const staticClubs=[
         "createdAt": "2024-04-03T13:30:10.733Z",
         "updatedAt": "2024-04-03T13:30:10.733Z",
         "__v": 0
+    },
+    {
+        "_id": "66136c71fe49145d27118aca",
+        "name": "Workshop Club",
+        "image": "https://llm1041430350.blob.core.windows.net/shristi-images/4200c491-47d7-473a-a59c-2f2256e12e661000389400.jpg?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2024-04-30T00:15:08Z&st=2024-04-02T16:15:08Z&spr=https&sig=%2BOjFAqiCutR7Urdzz9GU5LF3QhsJpMP1NQLRlRI5Znk%3D",
+        "desc": "Photography Workshop ",
+        "createdBy": "6609709a5dfe52e400154f20",
+        "createdAt": "2024-04-08T04:02:57.052Z",
+        "updatedAt": "2024-04-08T04:02:57.052Z",
+        "__v": 0
     }
 ]

@@ -40,8 +40,9 @@ function TeamSection() {
     me: [],
     ce: [],
     cms: [],
-    ee: [],
-    mun: []
+    ele: [],
+    mun: [],
+    civil: []
   });
 
   useEffect(() => {
@@ -51,7 +52,6 @@ function TeamSection() {
       .get(prodUrl + "/organisers")
       .then((response) => {
         setTeamMembers([...response.data]);
-        console.log(response.data);
         setTeamMembers({
           ...teamMembers,
 
@@ -81,6 +81,15 @@ function TeamSection() {
           }),
           techno: response.data.filter((res) => {
             if (res.group.toLowerCase() === "techno") return res;
+          }),
+          me : response.data.filter((res) => {
+            if (res.group.toLowerCase() === "mech") return res;
+          }),
+          civil : response.data.filter((res) => {
+            if (res.group.toLowerCase().trim() === "civil") return res;
+          }),
+          ele : response.data.filter((res) => {
+            if (res.group.toLowerCase().trim() === "ele") return res;
           }),
         });
       })
@@ -112,7 +121,7 @@ function TeamSection() {
         {teamMembers.workshop.map((member) => {
           return <Card member={member} />;
         })}
-        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Info & Pub Team</h1>
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">info & Pub Team</h1>
         {teamMembers.info.map((member) => {
           return <Card member={member} />;
         })}
@@ -126,6 +135,18 @@ function TeamSection() {
         })}
         <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Cse department</h1>
         {teamMembers.computer.map((member) => {
+          return <Card member={member} />;
+        })}
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Mechanical Department</h1>
+        {teamMembers.me.map((member) => {
+          return <Card member={member} />;
+        })}
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Civil Department</h1>
+        {teamMembers.civil.map((member) => {
+          return <Card member={member} />;
+        })}
+        <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Electrical Department</h1>
+        {teamMembers.ele.map((member) => {
           return <Card member={member} />;
         })}
         <h1 className="font-potra mt-[3%] text-2xl xs:text-3xl sm:text-4xl md:text-[3.5em]">Event Incharge</h1>

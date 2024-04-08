@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { functionWrapper } from "../../utils/wrapper";
 import ALoader from "../../utils/ALoader";
+import { Tooltip } from "@nextui-org/react";
 
 const SingleEvent = () => {
   const location = useLocation();
@@ -155,7 +156,7 @@ const SingleEvent = () => {
                     Registered
                   </button>
                 </div>
-              ) : (
+              ) : !eventData.disabled ? (
                 <button
                   className=" btn-register font-potra px-[90px] sm:px-[100px] sm:ml-3 text-[21px]"
                   type="submit"
@@ -163,6 +164,19 @@ const SingleEvent = () => {
                 >
                   REGISTER
                 </button>
+              ) : (
+                <div>
+                  <Tooltip content="Registration Closed For This Event or You Are not eligible for this event">
+                    <button
+                      className=" py-3 px-6 rounded-xl outline-none w-fit text-white font-bold font-poppins  border-2   border-[#804dee] bg-black bg-opacity-60 uppercase cursor-not-allowed"
+                      type="submit"
+                      onClick={() => handleRegister(event)}
+                      disabled={eventData.disabled}
+                    >
+                      Register
+                    </button>
+                  </Tooltip>
+                </div>
               )}
             </div>
           </div>
