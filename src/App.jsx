@@ -40,85 +40,30 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route
-            index
+            path="*"
             element={
-              loading ? (
-                <LoaderComponent />
-              ) : (
-                <div className="relative z-0 ">
-                  <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                    <Navbar />
-                    <Hero />
-                  </div>
-                  <About />
-                  <div id="journey">
-                    <Experience />
-                  </div>
-                  {/* <Works /> */}
-                  <Feedbacks />
-                  <Footer />
-                </div>
-              )
+              <LostInSpaceAnimation/>
+              // loading ? (
+              //   <LoaderComponent />
+              // ) : (
+              //   <div className="relative z-0 ">
+              //     <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+              //       <Navbar />
+              //       <Hero />
+              //     </div>
+              //     <About />
+              //     <div id="journey">
+              //       <Experience />
+              //     </div>
+              //     {/* <Works /> */}
+              //     <Feedbacks />
+              //     <Footer />
+              //   </div>
+              // )
             }
           />
 
-          <Route
-            path="/login"
-            element={
-              <div className="relative z-0 ">
-                <Navbar />
-                <div className="relative z-0 min-h-screen flex flex-col justify-between">
-                  <Contact />
-                  <Footer />
-                  {/* <StarsCanvas /> */}
-                </div>
-              </div>
-            }
-          />
-
-          <Route
-            path="/register"
-            element={
-              <div className="relative">
-                <Navbar />
-                <div className="relative z-0 min-h-screen flex flex-col justify-between">
-                  <Contact2 />
-                  <Footer />
-                  {/* <StarsCanvas /> */}
-                </div>
-              </div>
-            }
-          />
-          <Route
-            path="/events"
-            element={
-              <div className="relative z-0 min-h-screen ">
-                <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                  <Navbar />
-                </div>
-                {/* <StarsCanvas /> */}
-                <div className="h-full flex flex-col min-h-screen justify-between mt-11 ">
-                  <Events />
-                  <Footer />
-                </div>
-              </div>
-            }
-          />
-          {/* <Route path="/test" element={<div className="relative z-0 "></div>} /> */}
-
-          <Route
-            path="/team"
-            element={
-              <div className="relative">
-              <Navbar/>
-                <TeamSection />
-              </div>
-            }
-          ></Route>
-
-          <Route path="/events/:id" element={<SingleEvent />}></Route>
-          <Route path="*" element={<LostInSpaceAnimation />} />
-        </Routes>
+                </Routes>
         <ToastContainer />
       </BrowserRouter>
       <Stars />
