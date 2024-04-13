@@ -14,6 +14,7 @@ import Events from "./Events";
 import Footer from "./Footer";
 import LoaderComponent from "./LoaderComponent";
 import Background from "./Background";
+import YouTubeVideo from './YoutubeElement';
 
 
 export {
@@ -36,5 +37,6 @@ export {
   Footer,
   Background,
   LoaderComponent,
+  YouTubeVideo
 
 };

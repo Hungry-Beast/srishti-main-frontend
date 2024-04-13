@@ -11,6 +11,8 @@ import {
   Works,
   LoaderComponent,
   StarsCanvas,
+
+  YouTubeVideo,
   Contact2,
   Events,
   Footer,
@@ -55,6 +57,7 @@ const App = () => {
                     <Experience />
                   </div>
                   {/* <Works /> */}
+                  <YouTubeVideo />
                   <Feedbacks />
                   <Footer />
                 </div>
